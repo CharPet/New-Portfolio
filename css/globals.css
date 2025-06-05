@@ -1,0 +1,56 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+/* @font-face {
+  font-family: "GFS Heraklit";
+  src: url("../fonts/GFSHeraklit-Regular.woff2") format("woff2"),
+    url("../fonts/GFSHeraklit-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} */
+
+:root {
+  --shark-black: #212529;
+  --text-white: #fefefe;
+  --mojo-red: #c23a3e;
+  --outline-gray: #808080;
+  --dark-cyan: #0092a0;
+  --lime-green: #12de97;
+  --dark-blue: #040358;
+  --dark-violet: #260f36;
+  --sunset-red: #f63f44;
+  --burnt-umber-red: #902528;
+  --apricot-orange: #e59e6f;
+  --envy-green: #8ba78d;
+  --validation-green: #28a745;
+  --chenin: #ded582;
+  --input-background-white: #fff0f0;
+}
+
+body {
+  font-family: "Vollkorn", serif;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./css/globals.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./fonts/stylesheet.css" />
+    <title>Project3</title>
+  </head>
+  <body>
+    <div class="project1">
+      <div class="left1">
+        <h3 class="project1-title">
+          Δημιουργία κλασικού θέματος (classic theme) στο Wordpress
+        </h3>
+        <p class="project-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          varius enim in eros elementum tristique. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+          tristique.
+        </p>
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">WordPress</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">WordPress</span>
+        </div>
+
+        <div class="project1">
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="icon">
+                <img
+                  src="icons/Media Video List Streamline Iconoir Regular.svg"
+                  alt="Icon 1"
+                />
+              </div>
+              <div id="preview-btn">Προεπισκόπηση ιστοσελίδας</div>
+            </div>
+            <div class="grid-item">
+              <div class="icon">
+                <img
+                  src="icons/Link Streamline Iconoir Regular.svg"
+                  alt="Video Icon"
+                />
+              </div>
+              <div>
+                <a href="#" target="_blank">Επίσκεψη ιστοσελίδας</a>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="icon">
+                <img
+                  src="icons/Link Streamline Iconoir Regular.svg"
+                  alt="Link Icon"
+                />
+              </div>
+              <div><a href="#" target="_blank">Προβολή κώδικα (GitHub)</a></div>
+            </div>
+            <div class="grid-item">
+              <div class="icon">
+                <img
+                  src="icons/Link Streamline Iconoir Regular.svg"
+                  alt="Link Icon"
+                />
+              </div>
+              <div><a href="#" target="_blank">Figma Design File</a></div>
+            </div>
+            <div class="grid-item">
+              <div class="icon">
+                <img
+                  src="icons/Submit Document Streamline Iconoir Regular.svg"
+                  alt="Link Icon"
+                />
+              </div>
+              <div data-content="persona">Περσόνα Χρήστη</div>
+            </div>
+            <div class="grid-item">
+              <div class="icon">
+                <img
+                  src="icons/Submit Document Streamline Iconoir Regular.svg"
+                  alt="Embedded File Icon"
+                />
+              </div>
+              <div data-content="sitemap">Sitemap</div>
+            </div>
+            <div class="grid-item">
+              <div class="icon">
+                <img
+                  src="icons/Submit Document Streamline Iconoir Regular.svg"
+                  alt="Embedded File Icon"
+                />
+              </div>
+              <div data-content="userflow">User Flow</div>
+            </div>
+            <div class="grid-item">
+              <div class="icon">
+                <img
+                  src="icons/Submit Document Streamline Iconoir Regular.svg"
+                  alt="Embedded File Icon"
+                />
+              </div>
+              <div data-content="taskflow">Task Flow</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div id="right-content">
+          <img
+            src="images/3495e5ddbaabad34041a719683192312.jpg"
+            alt="pepe"
+            class="project-pic"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Overlay (initially hidden) -->
+    <div id="video-overlay" class="video-overlay" style="display: none">
+      <div class="video-overlay-content">
+        <button id="close-video" class="close-video-btn">&times;</button>
+        <video id="preview-video" controls autoplay muted>
+          <source src="videos/image140.mp4" type="video/mp4" />
+          Το βίντεο δεν υποστηρίζεται από τον browser σας.
+        </video>
+      </div>
+    </div>
+
+    <script defer src="script.js"></script>
+  </body>
+</html>
