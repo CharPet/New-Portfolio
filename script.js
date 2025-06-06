@@ -263,36 +263,11 @@ window.addEventListener("DOMContentLoaded", function () {
   // Profile SVG (if you want to keep animation for profile, leave as is)
   const svgContainer = document.querySelector(".left");
   const svgElement = document.createElement("img");
-  svgElement.src = "./images/path8gray.svg";
+  svgElement.src = "./images/path8gray.webp";
   svgElement.classList.add("decorative-svg");
   svgElement.alt = "Decorative background pattern";
   svgContainer.appendChild(svgElement);
 
-  // Skillset SVG
-  // const skillsetContainer = document.querySelector(".skillset .left");
-  // const skillsetSvg = document.createElement("img");
-  // skillsetSvg.src = "./images/path6teal.svg";
-  // skillsetSvg.classList.add("decorative-svg");
-  // skillsetSvg.alt = "Decorative background pattern";
-  // skillsetContainer.appendChild(skillsetSvg);
-
-  // Projects SVG
-  // const projectsContainer = document.querySelector(".projects .left");
-  // const projectsSvg = document.createElement("img");
-  // projectsSvg.src = "./images/path5orange.svg";
-  // projectsSvg.classList.add("decorative-svg");
-  // projectsSvg.alt = "Decorative background pattern";
-  // projectsContainer.appendChild(projectsSvg);
-
-  // Contact SVG
-  // const contactContainer = document.querySelector(".contact .left");
-  // const contactSvg = document.createElement("img");
-  // contactSvg.src = "./images/path13earth.svg";
-  // contactSvg.classList.add("decorative-svg");
-  // contactSvg.alt = "Decorative background pattern";
-  // contactContainer.appendChild(contactSvg);
-
-  // Disable scrolling initially
   disableScroll();
 });
 
@@ -305,17 +280,6 @@ document
     document.querySelector("#skillset").scrollIntoView({
       behavior: "smooth",
     });
-
-    // Start SVG animation after 3s delay
-    // setTimeout(() => {
-    //   gsap.to(".skillset .decorative-svg", {
-    //     opacity: 1,
-    //     duration: 4,
-    //     ease: "power2.inOut",
-    //     force3D: true,
-    //     clearProps: "transform",
-    //   });
-    // }, 3000);
   });
 
 document
@@ -327,17 +291,6 @@ document
     document.querySelector("#projects").scrollIntoView({
       behavior: "smooth",
     });
-
-    // Start SVG animation after 3s delay
-    // setTimeout(() => {
-    //   gsap.to(".projects .decorative-svg", {
-    //     opacity: 1,
-    //     duration: 4,
-    //     ease: "power2.inOut",
-    //     force3D: true,
-    //     clearProps: "transform",
-    //   });
-    // }, 3000);
   });
 
 document
@@ -349,17 +302,6 @@ document
     document.querySelector("#contact").scrollIntoView({
       behavior: "smooth",
     });
-
-    // Start SVG animation after 3s delay
-    // setTimeout(() => {
-    //   gsap.to(".contact .decorative-svg", {
-    //     opacity: 1,
-    //     duration: 4,
-    //     ease: "power2.inOut",
-    //     force3D: true,
-    //     clearProps: "transform",
-    //   });
-    // }, 3000);
   });
 
 window.addEventListener("load", function () {
