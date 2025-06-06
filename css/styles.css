@@ -20,7 +20,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: "Vollkorn", serif;
   scroll-behavior: smooth;
   height: 100%;
@@ -34,6 +34,8 @@ html {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   position: relative;
+  height: auto;
+  overflow: hidden;
 }
 
 /* INTRO SECTION */
@@ -88,6 +90,7 @@ html {
   /* color: #c0c0c0; */
   font-family: "Vollkorn SC", serif;
   font-size: 2.8rem;
+  font-size: clamp(1.5rem, 0.875rem + 3.125vw, 2.8rem);
   letter-spacing: 0.2em;
   text-align: center;
   margin: 0 auto;
@@ -112,6 +115,7 @@ html {
   font-weight: 400;
   color: var(--text-white);
   font-size: 1.8rem;
+  font-size: clamp(1rem, 0.5rem + 2.5vw, 1.8rem);
   text-align: center;
   margin: 0 auto;
 
@@ -223,7 +227,7 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  width:100%;
+  width: 100%;
   max-width: 100%;
   height: 100%;
   pointer-events: none;
@@ -255,6 +259,7 @@ html {
 
 h2 {
   font-size: 8rem;
+  font-size: clamp(3rem, 1rem + 10vw, 8rem);
   text-align: center;
   color: var(--shark-black);
   margin: auto;
@@ -264,6 +269,7 @@ h2 {
 
 .left h2 {
   font-size: 8rem;
+  font-size: clamp(3rem, 1rem + 10vw, 8rem);
   text-align: center;
   color: var(--text-white);
   font-family: "EB Garamond", sans-serif;
@@ -354,6 +360,7 @@ h2 {
   align-items: center;
   color: var(--text-white);
   font-size: 1.3rem;
+  font-size: clamp(0.8rem, 0.5rem + 1.25vw, 1.3rem);
   letter-spacing: 0.15em;
   cursor: pointer;
   font-weight: 400;
@@ -369,6 +376,7 @@ h2 {
 
 .nav-link-small span::first-letter {
   font-size: 1.8rem;
+  font-size: clamp(1rem, 0.65rem + 1.875vw, 1.8rem);
 }
 
 /* .nav-link-small::after {
@@ -415,7 +423,7 @@ h2 {
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 2rem;
+  /* font-size: 2rem; */
 }
 
 .polygon img {
@@ -429,6 +437,7 @@ h2 {
 #greet-message {
   font-family: "Vollkorn", sans-serif;
   font-size: 2rem;
+  font-size: clamp(1.2rem, 0.7rem + 2.5vw, 2rem);
   font-weight: 600;
   margin: 80px 56px 20px 118px;
   line-height: 1.2;
@@ -439,6 +448,7 @@ h2 {
 h3 {
   font-family: "Vollkorn", sans-serif;
   font-size: 2rem;
+  font-size: clamp(1.2rem, 0.7rem + 2.5vw, 2rem);
   font-weight: 600;
   margin: 80px 56px 20px 118px;
   line-height: 1.2;
@@ -450,6 +460,7 @@ h3 {
   font-family: "Vollkorn", sans-serif;
   margin: 20px 56px 20px 118px;
   font-size: 1.3rem;
+  font-size: clamp(0.9rem, 0.65rem + 1.25vw, 1.3rem);
   font-weight: 400;
   line-height: 1.6;
   opacity: 0;
@@ -481,12 +492,14 @@ h3 {
   margin: 28px auto 20px auto;
   text-align: center;
   font-size: 1.5rem;
+  font-size: clamp(1rem, 0.75rem + 1.25vw, 1.5rem);
   font-weight: 500;
 }
 
 .h4-subtitle {
   font-size: 1.5rem;
   margin: 20px 56px 20px 118px;
+  font-size: clamp(1rem, 0.75rem + 1.25vw, 1.5rem);
   font-weight: 500;
 }
 
@@ -516,6 +529,7 @@ h3 {
 .button-description {
   font-family: "Vollkorn", sans-serif;
   font-size: 1.1rem;
+  font-size: clamp(0.8rem, 0.65rem + 0.9375vw, 1.1rem);
   color: var(--text-white);
   letter-spacing: 0.02rem;
 }
@@ -614,11 +628,11 @@ h3 {
   position: sticky;
   top: 0;
   height: 100vh;
-  flex-shrink: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-shrink: 0;
   width: 50%;
   background: linear-gradient(
     180deg,
@@ -638,7 +652,7 @@ h3 {
 
 .skillset .right {
   flex: 1;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   padding: 2rem;
   opacity: 1;
   visibility: visible;
@@ -673,6 +687,7 @@ h3 {
 #toolset-link {
   text-align: center;
   font-size: 1.4em;
+  font-size: clamp(0.9rem, 0.65rem + 1.5625vw, 1.4rem);
   background-color: var(--shark-black);
   width: auto;
   margin-top: 1em;
@@ -704,7 +719,7 @@ h3 {
     180deg,
     /* rgb(69, 75, 54) 0%,
     rgba(246, 63, 68, 1) 100% */ #fe9d01 0%,
-    #fbb506 100%
+    #f6e500 100%
   );
 }
 
@@ -755,12 +770,6 @@ h3 {
 
 .projects .right {
   opacity: 1;
-}
-.project-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .project-pic {
@@ -868,22 +877,25 @@ h3 {
   margin: 44px 56px 24px 56px;
 }
 
+/* .contact-container div:nth-of-type(2) {
+  text-align: right;
+  font-size: 1.4rem;
+  font-size: clamp(0.9rem, 0.65rem + 1.5625vw, 1.4rem);
+} */
+
 .contact-details {
   width: 50%;
   font-size: 1.2rem;
+  font-size: clamp(0.8rem, 0.6rem + 1.25vw, 1.2rem);
   font-family: "Vollkorn", sans-serif;
   display: inline-block;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.contact-container div:nth-of-type(2) {
-  text-align: right;
-  font-size: 1.4rem;
-}
-
 .contact-details p:first-child {
-  font-size: 1.2em;
+  font-size: 1.4em;
+  font-size: clamp(0.8rem, 0.6rem + 1.25vw, 1.4rem);
 }
 
 .contact-details a {
@@ -932,6 +944,7 @@ h3 {
 #legend {
   margin-left: 1em;
   font-size: 1.8em;
+  font-size: clamp(1rem, 0.6rem + 2vw, 1.8rem);
 }
 
 fieldset div {
@@ -1016,6 +1029,7 @@ textarea.invalid {
 .input-error-message {
   color: var(--mojo-red);
   font-size: 0.85rem;
+  font-size: clamp(0.7rem, 0.65rem + 0.625vw, 0.85rem);
   font-family: Arial, sans-serif;
   letter-spacing: 0.02em;
   line-height: 1.5;
@@ -1155,4 +1169,3 @@ textarea.invalid + .input-error-message {
   font-size: 2rem;
   color: var(--text-white);
 }
-
