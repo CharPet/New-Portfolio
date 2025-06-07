@@ -176,6 +176,26 @@ html {
   fill: var(--mojo-red);
 }
 
+@keyframes chevron-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
 /* TRANSITION OVERLAY */
 .transition-overlay {
   position: fixed;
@@ -536,26 +556,6 @@ h3 {
 
 .last-paragraph {
   padding-bottom: 40px;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    pointer-events: none;
-  }
-  to {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
-
-@keyframes chevron-bounce {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
 }
 
 .profile.building .navbar-small,
@@ -1168,4 +1168,9 @@ textarea.invalid + .input-error-message {
 .nav-separator {
   font-size: 2rem;
   color: var(--text-white);
+}
+
+#intro,
+.hero {
+  opacity: 1 !important;
 }

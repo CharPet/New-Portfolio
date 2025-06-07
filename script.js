@@ -1,88 +1,97 @@
-// Only declare once!
-let isTransitioning = false;
-
-// Chevron click handler
-const chevron = document.getElementById("chevron-container-timeless");
-if (chevron) {
-  chevron.addEventListener("click", function (e) {
-    e.preventDefault();
-    if (isTransitioning) return;
-
-    // Remove any existing animation class first
-    const h2 = document.querySelector(".left h2");
-    h2.classList.remove("focus-in-expand");
-
-    // Force a reflow
-    void h2.offsetWidth;
-
-    // Add the class after a short delay to ensure transition has started
-    setTimeout(() => {
-      h2.classList.add("focus-in-expand");
-    }, 500); // Add class 1 second after click
-
-    transitionToProfile();
-  });
-
-  chevron.addEventListener("keydown", function (e) {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      if (!isTransitioning) {
-        transitionToProfile();
-      }
-    }
-  });
+function isMobile() {
+  return window.innerWidth <= 1024; // or 768 for stricter mobile
 }
 
-function transitionToProfile() {
-  isTransitioning = true;
+document.addEventListener("DOMContentLoaded", function () {
+  if (!isMobile()) {
+    // Desktop/laptop only: enable GSAP, transition overlay, container-scroll, finisher-header, etc.
 
-  // Create master timeline
-  const tl = gsap.timeline();
+    // ...your GSAP animation and overlay code here...
+    // Only declare once!
+    let isTransitioning = false;
 
-  // Phase 1: Fade out hero section
-  tl.to("#intro", {
-    opacity: 0,
-    duration: 0.8,
-    ease: "power2.inOut",
-  })
+    // Chevron click handler
+    const chevron = document.getElementById("chevron-container-timeless");
+    if (chevron) {
+      chevron.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (isTransitioning) return;
 
-    // Phase 2: Show black overlay
-    .to(
-      "#transitionOverlay",
-      {
-        opacity: 1,
-        duration: 0.5,
-        ease: "power2.inOut",
-      },
-      "-=0.3"
-    )
+        // Remove any existing animation class first
+        const h2 = document.querySelector(".left h2");
+        h2.classList.remove("focus-in-expand");
 
-    // Phase 3: Prepare profile section
-    .set("#profile", {
-      opacity: 1,
-      pointerEvents: "auto",
-    })
+        // Force a reflow
+        void h2.offsetWidth;
 
-    // Phase 4: Animate left panel stretching from top to bottom
-    .to("#profile .left", {
-      width: "50%",
-      duration: 0.8,
-      ease: "power3.out",
-    })
+        // Add the class after a short delay to ensure transition has started
+        setTimeout(() => {
+          h2.classList.add("focus-in-expand");
+        }, 500); // Add class 1 second after click
 
-    // Phase 5: Fade out black overlay
-    .to(
-      "#transitionOverlay",
-      {
+        transitionToProfile();
+      });
+
+      chevron.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          if (!isTransitioning) {
+            transitionToProfile();
+          }
+        }
+      });
+    }
+
+    function transitionToProfile() {
+      isTransitioning = true;
+
+      // Create master timeline
+      const tl = gsap.timeline();
+
+      // Phase 1: Fade out hero section
+      tl.to("#intro", {
         opacity: 0,
-        duration: 0.6,
+        duration: 0.8,
         ease: "power2.inOut",
-      },
-      "-=0.6"
-    )
+      })
 
-    // Remove or comment out the h2 animation
-    /* .to(
+        // Phase 2: Show black overlay
+        .to(
+          "#transitionOverlay",
+          {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.inOut",
+          },
+          "-=0.3"
+        )
+
+        // Phase 3: Prepare profile section
+        .set("#profile", {
+          opacity: 1,
+          pointerEvents: "auto",
+        })
+
+        // Phase 4: Animate left panel stretching from top to bottom
+        .to("#profile .left", {
+          width: "50%",
+          duration: 0.8,
+          ease: "power3.out",
+        })
+
+        // Phase 5: Fade out black overlay
+        .to(
+          "#transitionOverlay",
+          {
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.inOut",
+          },
+          "-=0.6"
+        )
+
+        // Remove or comment out the h2 animation
+        /* .to(
       "#profile .left h2",
       {
         opacity: 1,
@@ -93,117 +102,172 @@ function transitionToProfile() {
       "-=0.4"
     ) */
 
-    .to(
-      "#profile .polygon",
-      {
-        opacity: 1,
-        scale: 1,
-        rotation: 0,
-        duration: 2,
-        ease: "elastic.out(1, 0.8)",
-      },
-      "-=0.4"
-    )
+        .to(
+          "#profile .polygon",
+          {
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            duration: 2,
+            ease: "elastic.out(1, 0.8)",
+          },
+          "-=0.4"
+        )
 
-    .to(
-      "#profile .right",
-      {
-        opacity: 1,
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "-=0.3"
-    )
+        .to(
+          "#profile .right",
+          {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        )
 
-    // Phase 7: Animate right side content
-    .to(
-      "#profile .right h3",
-      {
-        opacity: 1,
-        x: 0,
-        duration: 2.6,
-        ease: "power2.out",
-      },
-      "-=1.2"
-    )
+        // Phase 7: Animate right side content
+        .to(
+          "#profile .right h3",
+          {
+            opacity: 1,
+            x: 0,
+            duration: 2.6,
+            ease: "power2.out",
+          },
+          "-=1.2"
+        )
 
-    .to(
-      "#profile .right h4",
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "-=1"
-    )
+        .to(
+          "#profile .right h4",
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.5,
+            ease: "power2.out",
+          },
+          "-=1"
+        )
 
-    .to(
-      "#profile .right .text",
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.4,
-        stagger: 0.4,
-        ease: "power2.out",
-      },
-      "-=0.3"
-    )
+        .to(
+          "#profile .right .text",
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.4,
+            stagger: 0.4,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        )
 
-    .to(
-      "#profile .right .container",
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.4,
-        stagger: 0.4,
-        ease: "power2.out",
-      },
-      "-=1"
-    )
+        .to(
+          "#profile .right .container",
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.4,
+            stagger: 0.4,
+            ease: "power2.out",
+          },
+          "-=1"
+        )
 
-    .to(
-      "#profile .navbar-small",
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power2.out",
-      },
-      "-=0.4"
-    )
+        .to(
+          "#profile .navbar-small",
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        )
 
-    // Add the SVG animation as the final element
-    .to(".decorative-svg", {
-      opacity: 0.8,
-      duration: 1.8,
-      ease: "power2.inOut",
-      force3D: true,
-      clearProps: "transform",
-    });
+        // Add the SVG animation as the final element
+        .to(".decorative-svg", {
+          opacity: 0.8,
+          duration: 1.8,
+          ease: "power2.inOut",
+          force3D: true,
+          clearProps: "transform",
+        });
 
-  // Complete transition
-  tl.call(() => {
-    isTransitioning = false;
-    document.body.style.overflow = "hidden";
-    document.querySelector("#profile .right").style.overflowY = "auto";
-  });
+      // Complete transition
+      tl.call(() => {
+        isTransitioning = false;
+        document.body.style.overflow = "hidden";
+        document.querySelector("#profile .right").style.overflowY = "auto";
+      });
 
-  const intro = document.getElementById("intro");
-  const finisherCanvas = document.getElementById("finisher-canvas");
+      const intro = document.getElementById("intro");
+      const finisherCanvas = document.getElementById("finisher-canvas");
 
-  // Hide or remove the canvas after the transition
-  if (finisherCanvas) {
-    finisherCanvas.style.display = "none";
-    // Or, to remove it completely:
-    finisherCanvas.parentNode.removeChild(finisherCanvas);
+      // Hide or remove the canvas after the transition
+      if (finisherCanvas) {
+        finisherCanvas.style.display = "none";
+        // Or, to remove it completely:
+        finisherCanvas.parentNode.removeChild(finisherCanvas);
+      }
+
+      // Optionally hide the intro section as well
+      // if (intro) {
+      //   intro.style.display = "none";
+      // }
+    }
+
+    // Chevron click handler for animation
+    chevron = document.getElementById("down-chevron-timeless");
+    if (chevron) {
+      chevron.addEventListener("click", function (e) {
+        e.preventDefault();
+        // Run GSAP transition to .profile
+        // ...
+      });
+    }
+  } else {
+    // Mobile/tablet: simple anchor scroll
+    const chevron = document.getElementById("down-chevron-timeless");
+    if (chevron) {
+      chevron.parentElement.setAttribute("href", "#profile");
+      chevron.onclick = null;
+    }
+    // Optionally, hide overlay/canvas if present
+    const overlay = document.getElementById("transitionOverlay");
+    if (overlay) overlay.style.display = "none";
+    const finisherCanvas = document.getElementById("finisher-canvas");
+    if (finisherCanvas) finisherCanvas.style.display = "none";
+    // Remove .container-scroll scroll/overflow logic if any
+    document.body.classList.remove("container-scroll");
+
+    // --- ADD THIS: Show profile section and its content ---
+    const profile = document.getElementById("profile");
+    if (profile) {
+      profile.style.opacity = "1";
+      profile.style.pointerEvents = "auto";
+    }
+    const profileLeft = document.querySelector("#profile .left");
+    if (profileLeft) {
+      profileLeft.style.width = "50%";
+    }
+    const profileRight = document.querySelector("#profile .right");
+    if (profileRight) {
+      profileRight.style.opacity = "1";
+    }
+    const polygon = document.querySelector("#profile .polygon");
+    if (polygon) {
+      polygon.style.opacity = "1";
+      polygon.style.transform = "scale(1) rotate(0deg)";
+    }
+    const navbarSmall = document.querySelector("#profile .navbar-small");
+    if (navbarSmall) {
+      navbarSmall.style.opacity = "1";
+      navbarSmall.style.transform = "none";
+    }
+    const h2 = document.querySelector("#profile .left h2");
+    if (h2) {
+      h2.style.opacity = "1";
+    }
   }
-
-  // Optionally hide the intro section as well
-  if (intro) {
-    intro.style.display = "none";
-  }
-}
+});
 
 // Add some interactive enhancements
 document.querySelectorAll(".nav-link-small").forEach((link) => {
@@ -588,10 +652,10 @@ if (textarea) {
   });
 }
 
-window.addEventListener("pageshow", function (event) {
-  if (event.persisted) {
-    console.log("Page was restored from bfcache");
-  } else {
-    console.log("Page was loaded normally");
-  }
-});
+// window.addEventListener("pageshow", function (event) {
+//   if (event.persisted) {
+//     console.log("Page was restored from bfcache");
+//   } else {
+//     console.log("Page was loaded normally");
+//   }
+// });
