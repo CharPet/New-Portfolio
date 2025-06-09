@@ -136,15 +136,13 @@ html {
 }
 
 .hero-image-container {
-  margin: 0 auto;
+  margin: 4rem auto;
 }
 
 .hero-image {
   object-fit: cover;
-  max-width: 100%;
-  height: auto;
-  width: 35em;
-  height: auto;
+  max-width: 100%; /* rd */
+  height: auto; /* rd */
 }
 
 #chevron-container-timeless {
@@ -229,8 +227,8 @@ html {
 
 .left {
   position: relative;
-  width: 100%;
-  height: 50%;
+  width: 0%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -245,11 +243,27 @@ html {
 }
 
 .decorative-svg {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  pointer-events: none;
   z-index: 1;
   object-fit: cover;
+  transition: opacity 0.2s;
 }
 
 .decorative-svg-no-animation {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
   z-index: 1;
   object-fit: cover;
   opacity: 0.8;
@@ -765,6 +779,20 @@ h3 {
   z-index: 1;
   position: relative;
   cursor: pointer;
+}
+
+.project-container .button {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.open-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
 }
 
 .project-pic {

@@ -595,6 +595,7 @@ h3 {
 .projects .right {
   width: 100%;
   padding: 0;
+  margin: 0;
 }
 
 .project-container {
