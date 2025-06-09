@@ -23,7 +23,7 @@
   overflow-x: hidden;
 }
 
-.project1 .left1 {
+.project1 .left {
   flex: 1;
   min-width: 0;
   border-right: 1px solid var(--shark-black);
@@ -217,4 +217,101 @@
   font-size: 2em;
   cursor: pointer;
   z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .project1 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .project1 .left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--shark-black);
+    position: static;
+    height: auto;
+    max-height: none;
+  }
+
+  .project1 .right {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--shark-black);
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .project1-title {
+    margin: 24px 24px 16px 24px;
+  }
+
+  .project-description {
+    margin: 16px 24px;
+  }
+
+  .tags {
+    margin: 16px 24px 32px 24px;
+  }
+
+  .grid-container {
+    margin: 32px 24px 48px 24px;
+    gap: 16px;
+  }
+
+  .grid-item {
+    padding: 16px;
+    font-size: 1.1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .grid-item .icon img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .project1-title {
+    font-size: 1.3rem;
+    margin: 20px 20px 12px 20px;
+  }
+
+  .project-description {
+    font-size: 1rem;
+    margin: 12px 20px;
+  }
+
+  .tags {
+    margin: 12px 20px 24px 20px;
+  }
+
+  .tag {
+    font-size: 0.9rem;
+    padding: 0.4em 0.8em;
+  }
+
+  .grid-container {
+    margin: 24px 20px 32px 20px;
+    gap: 12px;
+  }
+
+  .grid-item {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .grid-item .icon img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .close-video-btn {
+    top: 0.5em;
+    right: 1em;
+    font-size: 1.8em;
+  }
 }

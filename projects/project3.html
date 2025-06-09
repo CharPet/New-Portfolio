@@ -2,14 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="./css/globals.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../css/globals.css" />
+    <link rel="stylesheet" href="../css/projects-styles.css" />
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
     <title>Project3</title>
   </head>
   <body>
     <div class="project1">
-      <div class="left1">
+      <div class="left">
         <h3 class="project1-title">
           Δημιουργία κλασικού θέματος (classic theme) στο Wordpress
         </h3>
@@ -32,87 +32,87 @@
 
         <div class="project1">
           <div class="grid-container">
-            <div class="grid-item">
+            <button class="grid-item" id="preview-btn">
               <div class="icon">
                 <img
-                  src="icons/Media Video List Streamline Iconoir Regular.svg"
+                  src="../icons/Media Video List Streamline Iconoir Regular.svg"
                   alt="Icon 1"
                 />
               </div>
-              <div id="preview-btn">Προεπισκόπηση ιστοσελίδας</div>
-            </div>
-            <div class="grid-item">
+              <div id="preview-btn2">Προεπισκόπηση ιστοσελίδας</div>
+            </button>
+            <button class="grid-item">
               <div class="icon">
                 <img
-                  src="icons/Link Streamline Iconoir Regular.svg"
+                  src="../icons/Link Streamline Iconoir Regular.svg"
                   alt="Video Icon"
                 />
               </div>
               <div>
                 <a href="#" target="_blank">Επίσκεψη ιστοσελίδας</a>
               </div>
-            </div>
-            <div class="grid-item">
+            </button>
+            <button class="grid-item">
               <div class="icon">
                 <img
-                  src="icons/Link Streamline Iconoir Regular.svg"
+                  src="../icons/Link Streamline Iconoir Regular.svg"
                   alt="Link Icon"
                 />
               </div>
               <div><a href="#" target="_blank">Προβολή κώδικα (GitHub)</a></div>
-            </div>
-            <div class="grid-item">
+            </button>
+            <button class="grid-item">
               <div class="icon">
                 <img
-                  src="icons/Link Streamline Iconoir Regular.svg"
+                  src="../icons/Link Streamline Iconoir Regular.svg"
                   alt="Link Icon"
                 />
               </div>
               <div><a href="#" target="_blank">Figma Design File</a></div>
-            </div>
-            <div class="grid-item">
+            </button>
+            <button class="grid-item" data-content="persona">
               <div class="icon">
                 <img
-                  src="icons/Submit Document Streamline Iconoir Regular.svg"
+                  src="../icons/Submit Document Streamline Iconoir Regular.svg"
                   alt="Link Icon"
                 />
               </div>
-              <div data-content="persona">Περσόνα Χρήστη</div>
-            </div>
-            <div class="grid-item">
+              <div>Περσόνα Χρήστη</div>
+            </button>
+            <button class="grid-item" data-content="Sitemap">
               <div class="icon">
                 <img
-                  src="icons/Submit Document Streamline Iconoir Regular.svg"
+                  src="../icons/Submit Document Streamline Iconoir Regular.svg"
                   alt="Embedded File Icon"
                 />
               </div>
-              <div data-content="sitemap">Sitemap</div>
-            </div>
-            <div class="grid-item">
+              <div>Sitemap</div>
+            </button>
+            <button class="grid-item" data-content="userflow">
               <div class="icon">
                 <img
-                  src="icons/Submit Document Streamline Iconoir Regular.svg"
+                  src="../icons/Submit Document Streamline Iconoir Regular.svg"
                   alt="Embedded File Icon"
                 />
               </div>
-              <div data-content="userflow">User Flow</div>
-            </div>
-            <div class="grid-item">
+              <div>User Flow</div>
+            </button>
+            <button class="grid-item" data-content="taskflow">
               <div class="icon">
                 <img
-                  src="icons/Submit Document Streamline Iconoir Regular.svg"
+                  src="../icons/Submit Document Streamline Iconoir Regular.svg"
                   alt="Embedded File Icon"
                 />
               </div>
-              <div data-content="taskflow">Task Flow</div>
-            </div>
+              <div>Task Flow</div>
+            </button>
           </div>
         </div>
       </div>
       <div class="right">
         <div id="right-content">
           <img
-            src="images/3495e5ddbaabad34041a719683192312.jpg"
+            src="../images/3495e5ddbaabad34041a719683192312.webp"
             alt="pepe"
             class="project-pic"
           />
@@ -125,12 +125,14 @@
       <div class="video-overlay-content">
         <button id="close-video" class="close-video-btn">&times;</button>
         <video id="preview-video" controls autoplay muted>
-          <source src="videos/image140.mp4" type="video/mp4" />
+          <source src="../videos/image140.mp4" type="video/mp4" />
           Το βίντεο δεν υποστηρίζεται από τον browser σας.
         </video>
       </div>
     </div>
 
-    <script defer src="script.js"></script>
+    <script src="./scripts/projects-script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.js"></script>
   </body>
 </html>
