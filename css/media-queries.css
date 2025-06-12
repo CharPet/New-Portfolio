@@ -1,5 +1,5 @@
 /* NAVBAR-SMALL ONLY */
-@media only screen and (max-width: 1919px) {
+@media only screen and (max-width: 1900px) {
   .navbar-small {
     position: absolute;
     bottom: 15em;
@@ -11,7 +11,6 @@
     align-items: center;
     background: repeat scroll 0% 0% / auto padding-box border-box none
       transparent;
-    /* background: rgba(33, 37, 41, 0.7); */
     width: auto;
   }
 
