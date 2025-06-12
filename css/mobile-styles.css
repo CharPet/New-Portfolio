@@ -546,6 +546,61 @@ hr {
   margin: 2em auto;
 } */
 
+.planet-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  margin: 2em auto;
+}
+
+.planet-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 6px solid var(--shark-black);
+  /* border-radius: 1em; */
+  padding: 1em 1em;
+  background: var(--text-white);
+  /* max-width: 90%; */
+  margin: 0 auto;
+  width: 90%;
+}
+
+.planet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+}
+
+.circle-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: 0.5em; */
+  border: 2px solid var(--shark-black);
+}
+
+.circle-wrapper img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.planet-desc {
+  color: var(--shark-black);
+  font-size: 0.95em;
+  text-align: center;
+  margin-top: 0.6em;
+  display: block;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
 .toolset-figure,
 .toolset-container,
 iframe {
