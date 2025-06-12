@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ...your GSAP animation and overlay code here...
     // Only declare once!
+
     let isTransitioning = false;
 
     // Chevron click handler
@@ -267,6 +268,17 @@ document.addEventListener("DOMContentLoaded", function () {
       h2.style.opacity = "1";
     }
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const template = document.getElementById("navbar-template");
+    document.querySelectorAll(".left").forEach((left) => {
+      // Avoid duplicate navbars if reloading or hot-reloading
+      if (!left.querySelector(".navbar-small")) {
+        const navClone = template.content.cloneNode(true);
+        left.appendChild(navClone);
+      }
+    });
+  });
 });
 
 // Add some interactive enhancements
@@ -300,6 +312,16 @@ if (polygon) {
     });
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const template = document.getElementById("navbar-template");
+  const navPlaceholders = document.querySelectorAll(".nav-placeholder");
+
+  navPlaceholders.forEach((placeholder) => {
+    const navClone = template.content.cloneNode(true);
+    placeholder.appendChild(navClone);
+  });
+});
 
 // Smooth scroll for right panel
 document

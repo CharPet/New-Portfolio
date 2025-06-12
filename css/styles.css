@@ -339,6 +339,22 @@ h2 {
   }
 }
 
+.nav-placeholder {
+  position: relative;
+  width: 100%;
+}
+
+.nav-placeholder > .navbar-small {
+  position: absolute;
+  bottom: 3.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  z-index: 2;
+  width: 90%;
+  height: 3em;
+}
+
 .navbar-small {
   position: absolute;
   bottom: 3.5em;

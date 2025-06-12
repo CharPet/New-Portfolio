@@ -55,31 +55,22 @@ if (typeof FinisherHeader !== "undefined") {
       },
     },
     colors: {
-      background: "#d9d9d9",
+      background: "#262e53",
       particles: [
+        "#262e53",
         "#d9d9d9",
         "#262e53",
+        "#292929",
         "#c26b57",
         "#eef3f5",
         "#7D86A3",
-        "#292929",
-        "#d9d9d9",
-        "#262e53",
-        // "#c26b57",
-        "#eef3f5",
-        // "#7D86A3",
-        "#292929",
-        "#262e53",
-        // "#c26b57",
-        "#eef3f5",
-        // "#7D86A3",
         "#292929",
       ],
     },
     blending: "overlay",
     opacity: {
       center: 0.5,
-      edge: 0.01,
+      edge: 0.05,
     },
     skew: 0,
     shapes: ["c"],
@@ -97,11 +88,11 @@ if (typeof FinisherHeader !== "undefined") {
 //     speed: {
 //       x: {
 //         min: 0.1,
-//         max: 0.6,
+//         max: 5.6,
 //       },
 //       y: {
 //         min: 0.1,
-//         max: 0.6,
+//         max: 5.6,
 //       },
 //     },
 //     colors: {
@@ -114,6 +105,7 @@ if (typeof FinisherHeader !== "undefined") {
 //         "#D4AF37",
 //         "#FF0000",
 //         // "#FFFF00",
+
 //       ],
 //     },
 //     blending: "overlay",
