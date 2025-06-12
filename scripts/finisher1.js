@@ -51,7 +51,7 @@ if (typeof FinisherHeader !== "undefined") {
       },
       y: {
         min: 0.1,
-        max: 3.5,
+        max: 1.5,
       },
     },
     colors: {
