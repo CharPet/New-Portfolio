@@ -353,4 +353,9 @@
     margin: 4em auto;
     width: 85%;
   }
+
+  .project1 .right {
+    min-height: 0;
+    /* height: auto; */
+  }
 }

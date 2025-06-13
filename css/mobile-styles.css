@@ -1174,8 +1174,8 @@ textarea.invalid + .input-error-message {
     max-width: 80%;
   }
 
-  figure a:active {
-    color: #ff0000;
+  .project-container a img:active {
+    filter: brightness(0.8);
   }
 
   .contact-details {
