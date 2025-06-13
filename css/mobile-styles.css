@@ -1174,6 +1174,10 @@ textarea.invalid + .input-error-message {
     max-width: 90%;
   }
 
+  #h4-mobile-only {
+    display: block;
+  }
+
   #fieldset {
     border: 2px groove rgba(0, 0, 0, 0.3);
   }
@@ -1220,6 +1224,14 @@ textarea.invalid + .input-error-message {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    #h4-mobile-only {
+      display: block;
+    }
+  }
+
+  #legend {
+    display: none;
   }
 }
 
@@ -1233,7 +1245,7 @@ textarea.invalid + .input-error-message {
   }
 
   #form {
-    width: 100%;
+    width: 95%;
   }
 
   .planet-grid {
