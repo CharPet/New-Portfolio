@@ -314,4 +314,20 @@
     right: 1em;
     font-size: 1.8em;
   }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 16px 8px;
+  }
+  .grid-item {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 0.95rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
 }
