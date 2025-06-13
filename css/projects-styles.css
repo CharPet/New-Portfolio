@@ -331,3 +331,26 @@
     gap: 8px;
   }
 }
+
+@media (max-width: 768px) {
+  .project1 {
+    flex-direction: column;
+  }
+  .project1 .right {
+    order: -1;
+  }
+  .project1 .left {
+    order: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .project1 .grid-container {
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin: 4em auto;
+    width: 85%;
+  }
+}
