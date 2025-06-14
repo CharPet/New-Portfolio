@@ -314,7 +314,7 @@
 }
 
 /* Mobile - 480px and below */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 425px) {
   .hero-text {
     top: 12%;
     padding: 0 1rem;
@@ -365,7 +365,7 @@
 }
 
 /* Extra small mobile - 360px and below */
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 375px) {
   .hero-text {
     top: 15%;
     padding: 0 0.5rem;
