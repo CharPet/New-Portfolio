@@ -1224,13 +1224,15 @@ textarea.invalid + .input-error-message {
     justify-content: space-evenly;
     align-items: center;
     padding: 0;
-  }
-  #h4-mobile-only {
-    display: block;
+    border: 3px solid var(--shark-black);
   }
 
   #legend {
     display: none;
+  }
+
+  #h4-mobile-only {
+    display: block;
   }
 }
 
