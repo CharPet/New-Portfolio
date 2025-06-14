@@ -1206,8 +1206,8 @@ textarea.invalid + .input-error-message {
   }
 
   .planet-grid {
-    width: 90%;
-    max-width: 90%;
+    /* width: 90%;
+    max-width: 90%; */
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
