@@ -1206,10 +1206,9 @@ textarea.invalid + .input-error-message {
   }
 
   .planet-grid {
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    max-width: 90%;
     margin: 0 auto;
-    box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5em;
@@ -1224,10 +1223,9 @@ textarea.invalid + .input-error-message {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
-    #h4-mobile-only {
-      display: block;
-    }
+  }
+  #h4-mobile-only {
+    display: block;
   }
 
   #legend {
@@ -1268,5 +1266,9 @@ textarea.invalid + .input-error-message {
     align-items: center;
     width: 100%;
     margin-bottom: 1em;
+  }
+
+  #h4-mobile-only {
+    display: block;
   }
 }
