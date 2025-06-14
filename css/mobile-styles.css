@@ -1221,22 +1221,22 @@ textarea.invalid + .input-error-message {
     align-items: center;
     gap: 0.5em;
   }
-
   .planet-group .planet {
     flex: 1 1 45%;
     max-width: 48%;
-    min-width: 120px; /* Optional: prevents being too small */
+    min-width: 120px;
     box-sizing: border-box;
     margin-bottom: 0.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
+  /* This must be after the above! */
   .planet-group.four-planets .planet {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
+    flex: 0 0 50%;
+    max-width: 50%;
+    min-width: 0;
+  }
 
   #legend {
     display: none;
