@@ -1208,7 +1208,7 @@ textarea.invalid + .input-error-message {
   .planet-grid {
     /* width: 90%;
     max-width: 90%; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5em;
@@ -1217,12 +1217,13 @@ textarea.invalid + .input-error-message {
 
   .planet-group {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     margin: 0 auto;
     box-sizing: border-box;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    padding: 0.5em;
   }
   #h4-mobile-only {
     display: block;
