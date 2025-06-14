@@ -802,6 +802,10 @@ iframe {
   transition: transform 0.3s ease;
 }
 
+#h4-mobile-only {
+  display: none;
+}
+
 #form {
   margin: 4em auto;
   width: 85%;
@@ -1172,10 +1176,6 @@ textarea.invalid + .input-error-message {
 
   #form {
     max-width: 90%;
-  }
-
-  #h4-mobile-only {
-    display: block;
   }
 
   #fieldset {
