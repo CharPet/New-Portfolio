@@ -1,3 +1,28 @@
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth <= 425) {
+    // Profile section
+    var profileImg = document.getElementById("profile-bg");
+    if (profileImg) {
+      profileImg.src = "./images-for-phones/path8gray.webp";
+    }
+    // Skillset section
+    var skillsetImg = document.getElementById("skillset-bg");
+    if (skillsetImg) {
+      skillsetImg.src = "./images-for-phones/path6teal.webp";
+    }
+    // Projects section
+    var projectsImg = document.getElementById("projects-bg");
+    if (projectsImg) {
+      projectsImg.src = "./images-for-phones/path9orangered.webp";
+    }
+    // Contact section
+    var contactImg = document.getElementById("contact-bg");
+    if (contactImg) {
+      contactImg.src = "./images-for-phones/path13earth.webp";
+    }
+  }
+});
+
 const fname = document.getElementById("fname");
 const lname = document.getElementById("lname");
 const email = document.getElementById("email");
