@@ -865,7 +865,7 @@ textarea {
   width: 100%;
   margin: 0.3em 0 0 0;
   padding: 0.5em 0.5em;
-  border: 2px groove rgba(0, 0, 0, 0.3);
+  border: 2px groove var(--shark-black);
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -1240,6 +1240,7 @@ textarea.invalid + .input-error-message {
   .planet-group.four-planets .planet:nth-child(4) {
     margin-top: 1em;
   }
+
   #legend {
     display: none;
   }
@@ -1247,10 +1248,6 @@ textarea.invalid + .input-error-message {
   #h4-mobile-only {
     display: block;
   }
-}
-
-#form {
-  width: 95%;
 }
 
 @media (max-width: 375px) {
@@ -1282,6 +1279,33 @@ textarea.invalid + .input-error-message {
     align-items: center;
     width: 100%;
     margin-bottom: 1em;
+  }
+
+  .planet-group.four-planets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .planet-group.four-planets .planet {
+    flex: 0 0 calc(50% - 0.5em); /* Exactly 50% width minus gap */
+    max-width: calc(50% - 0.5em);
+    min-width: 0;
+    margin: 0;
+  }
+
+  /* Force first two planets to be in first row */
+  .planet-group.four-planets .planet:nth-child(1),
+  .planet-group.four-planets .planet:nth-child(2) {
+    margin-bottom: 1em;
+  }
+
+  /* Force last two planets to be in second row */
+  .planet-group.four-planets .planet:nth-child(3),
+  .planet-group.four-planets .planet:nth-child(4) {
+    margin-top: 1em;
   }
 
   #h4-mobile-only {
