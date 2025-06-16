@@ -878,7 +878,7 @@ textarea {
   width: 100%;
   margin: 0.3em 0 0 0;
   padding: 0.5em 0.5em;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -1326,23 +1326,15 @@ textarea.invalid + .input-error-message {
 }
 
 @media (max-width: 320px) {
-  #form {
-    box-shadow: none;
-  }
-
   #fieldset {
     border: 2px solid var(--shark-black);
-    background: none;
-    /* max-width: 95%;
-    width: 100%; */
+  }
+
+  #fieldset input {
+    border: 2px solid var(--shark-black);
   }
 
   #fieldset textarea {
     border: 2px solid var(--shark-black);
-  }
-
-  #legend {
-    width: 100%;
-    max-width: 100%;
   }
 }
