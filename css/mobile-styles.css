@@ -339,7 +339,7 @@ h2 {
   font-size: clamp(1rem, 0.65rem + 1.875vw, 1.8rem);
 }
 
-.nav-link-small:hover {
+.nav-link-small:active {
   transform: scale(1.1);
 }
 
@@ -809,7 +809,19 @@ iframe {
 #form {
   margin: 4em auto;
   width: 85%;
-  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+#form,
+#fieldset,
+#legend {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#form,
+#fieldset,
+#legend {
+  margin-block-start: 0 !important;
 }
 
 #fieldset {
@@ -828,6 +840,7 @@ iframe {
     #f1f1f1 70%,
     #ededed 100%
   );
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
 }
 
 #legend {
