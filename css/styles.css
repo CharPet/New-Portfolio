@@ -88,27 +88,33 @@ html {
 
 .hero-title {
   /* color: #c0c0c0; */
-  font-family: "Vollkorn SC", serif;
+  font-family: "MedusaGothic", serif;
   font-size: 2.8rem;
-  font-size: clamp(1.5rem, 1rem + 3vw, 2.8rem);
+  font-size: clamp(1.5rem, 1rem + 3vw, 3.2rem);
   letter-spacing: 0.2em;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 0.8em;
-  font-weight: 600;
+  /* font-weight: 600; */
   background: linear-gradient(
     90deg,
-    #a0a0a0 0%,
+    /* #a0a0a0 0%,
     #c0c0c0 25%,
     #f5f5f5 50%,
     #c0c0c0 75%,
-    #a0a0a0 100%
+    #a0a0a0 100% */
+      #0b0b0f 0%,
+    #1a1a23 50%,
+    #2d2d3a 100%
+      /* #f8f8ff 0%,
+    #e5e5e5 40%,
+    #c0c0c0 80%,
+    #a9a9a9 100% */
   );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  word-break: break-word; /* rd */
 }
 
 .hero-subtitle {
@@ -122,17 +128,50 @@ html {
   opacity: 1;
   background: linear-gradient(
     90deg,
-    #a0a0a0 0%,
+    /* #a0a0a0 0%,
     #c0c0c0 25%,
     #f5f5f5 50%,
     #c0c0c0 75%,
-    #a0a0a0 100%
+    #a0a0a0 100% */
+      #0b0b0f 0%,
+    #1a1a23 50%,
+    #2d2d3a 100%
+      /* #f8f8ff 0%,
+    #e5e5e5 40%,
+    #c0c0c0 80%,
+    #a9a9a9 100% */
   );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  word-break: break-word; /* rd */
+}
+
+#intro aside {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "MedusaGothic", serif;
+  font-size: 5.8rem;
+  /* font-size: clamp(1.5rem, 1rem + 3vw, 6.8rem); */
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  bottom: 0.5em;
+  background: linear-gradient(
+    90deg,
+    #0b0b0f 0%,
+    #1a1a23 50%,
+    #2d2d3a 100%
+      /* #f8f8ff 0%,
+    #e5e5e5 40%,
+    #c0c0c0 80%,
+    #a9a9a9 100% */
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-image-container {

@@ -1,81 +1,81 @@
-// // ===============================
-// // Finisher Header Initialization
-// // ===============================
-if (typeof FinisherHeader !== "undefined") {
-  new FinisherHeader({
-    count: 70,
-    size: {
-      min: 1300,
-      max: 1500,
-      pulse: 0,
-    },
-    speed: {
-      x: {
-        min: 0.1,
-        max: 0.6,
-      },
-      y: {
-        min: 0.1,
-        max: 0.6,
-      },
-    },
-    colors: {
-      // background: "#9138e5",
-      particles: ["#ff4848", "#000000", "#2235e5", "#000000", "#ff0000"],
-    },
-    blending: "overlay",
-    opacity: {
-      center: 0.5,
-      edge: 0.05,
-    },
-    skew: 0,
-    shapes: ["c"],
-  });
-}
+// // // ===============================
+// // // Finisher Header Initialization
+// // // // ===============================
+// if (typeof FinisherHeader !== "undefined") {
+//   new FinisherHeader({
+//     count: 70,
+//     size: {
+//       min: 1300,
+//       max: 1500,
+//       pulse: 0,
+//     },
+//     speed: {
+//       x: {
+//         min: 0.1,
+//         max: 0.6,
+//       },
+//       y: {
+//         min: 0.1,
+//         max: 0.6,
+//       },
+//     },
+//     colors: {
+//       // background: "#9138e5",
+//       particles: ["#ff4848", "#353839", "#2235e5", "#353839", "#ff0000"],
+//     },
+//     blending: "overlay",
+//     opacity: {
+//       center: 0.5,
+//       edge: 0.05,
+//     },
+//     skew: 0,
+//     shapes: ["c"],
+//   });
+// }
 
 // ===============================
 // Finisher Header Initialization
 // ===============================
-if (typeof FinisherHeader !== "undefined") {
-  new FinisherHeader({
-    count: 70,
-    size: {
-      min: 1300,
-      max: 1500,
-      pulse: 0,
-    },
-    speed: {
-      x: {
-        min: 0.1,
-        max: 1,
-      },
-      y: {
-        min: 0.1,
-        max: 1,
-      },
-    },
-    colors: {
-      background: "#14213d",
-      particles: [
-        "#000000",
-        "#14213d",
-        "#fca311",
-        "#e5e5e5",
-        "#ffffff",
-        "#14213d",
-        "#ffffff",
-        "#14213d",
-      ],
-    },
-    blending: "overlay",
-    opacity: {
-      center: 0.3,
-      edge: 0.02,
-    },
-    skew: 0,
-    shapes: ["c"],
-  });
-}
+// if (typeof FinisherHeader !== "undefined") {
+//   new FinisherHeader({
+//     count: 70,
+//     size: {
+//       min: 1300,
+//       max: 1500,
+//       pulse: 0,
+//     },
+//     speed: {
+//       x: {
+//         min: 0.1,
+//         max: 1,
+//       },
+//       y: {
+//         min: 0.1,
+//         max: 1,
+//       },
+//     },
+//     colors: {
+//       background: "#14213d",
+//       particles: [
+//         "#000000",
+//         "#14213d",
+//         "#fca311",
+//         "#e5e5e5",
+//         "#ffffff",
+//         "#14213d",
+//         "#ffffff",
+//         "#14213d",
+//       ],
+//     },
+//     blending: "overlay",
+//     opacity: {
+//       center: 0.3,
+//       edge: 0.02,
+//     },
+//     skew: 0,
+//     shapes: ["c"],
+//   });
+// }
 
 // if (typeof FinisherHeader !== "undefined") {
 //   new FinisherHeader({
@@ -129,20 +129,20 @@ if (typeof FinisherHeader !== "undefined") {
     speed: {
       x: {
         min: 0.1,
-        max: 1,
+        max: 0.6,
       },
       y: {
         min: 0.1,
-        max: 1,
+        max: 0.6,
       },
     },
     colors: {
-      background: "#fffcf2",
+      // background: "#fffcf2",
       particles: [
         "#fffcf2",
-        "#ccc5b9",
         "#403d39",
         "#252422",
+        "#ccc5b9",
         "#eb5e28",
         "#14213d",
         "#ffffff",
@@ -152,7 +152,7 @@ if (typeof FinisherHeader !== "undefined") {
     blending: "overlay",
     opacity: {
       center: 0.3,
-      edge: 0.02,
+      edge: 0.05,
     },
     skew: 0,
     shapes: ["c"],
@@ -249,6 +249,48 @@ if (typeof FinisherHeader !== "undefined") {
 //       ],
 //     },
 //     blending: "overlay",
+//     opacity: {
+//       center: 0.3,
+//       edge: 0.02,
+//     },
+//     skew: 0,
+//     shapes: ["c"],
+//   });
+// }
+
+// if (typeof FinisherHeader !== "undefined") {
+//   new FinisherHeader({
+//     count: 70,
+//     size: {
+//       min: 1300,
+//       max: 1500,
+//       pulse: 0,
+//     },
+//     speed: {
+//       x: {
+//         min: 0.1,
+//         max: 10,
+//       },
+//       y: {
+//         min: 0.1,
+//         max: 10,
+//       },
+//     },
+//     colors: {
+//       // background: "#fffcf2",
+//       particles: [
+//         "#27187e",
+//         "#758bfd",
+//         // "#aeb8fe",
+//         "#f1f2f6",
+//         "#ff8600",
+//         "#27187e",
+//         "#758bfd",
+//         // "#aeb8fe",
+//         "#f1f2f6",
+//       ],
+//     },
+//     blending: "screen",
 //     opacity: {
 //       center: 0.3,
 //       edge: 0.02,
