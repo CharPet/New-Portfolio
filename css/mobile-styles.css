@@ -815,7 +815,7 @@ iframe {
 #fieldset,
 #legend {
   margin-top: 0 !important;
-  padding-top: 0 !important;
+  /* padding-top: 0 !important; */
 }
 
 #form,
@@ -827,7 +827,7 @@ iframe {
 #fieldset {
   margin: 0 auto;
   padding: 1em;
-  border: 2px solid var(--shark-black);
+  border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -840,7 +840,7 @@ iframe {
     #f1f1f1 70%,
     #ededed 100%
   );
-  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px 0 rgba(148, 146, 146, 0.1);
 }
 
 #legend {
@@ -878,7 +878,7 @@ textarea {
   width: 100%;
   margin: 0.3em 0 0 0;
   padding: 0.5em 0.5em;
-  border: 2px solid var(--shark-black);
+  border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -911,9 +911,8 @@ textarea.touched:valid {
 
 input,
 textarea {
-  border: 2px groove var(--shark-black);
+  border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: border-color 0.2s, background-color 0.2s;
 }
 
 input.valid,

@@ -1,14 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
-/* @font-face {
-  font-family: "GFS Heraklit";
-  src: url("../fonts/GFSHeraklit-Regular.woff2") format("woff2"),
-    url("../fonts/GFSHeraklit-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
-
 :root {
   --shark-black: #212529;
   --text-white: #fefefe;
@@ -25,6 +16,21 @@
   --validation-green: #28a745;
   --chenin: #ded582;
   --input-background-white: #fff0f0;
+
+  /* CHECK */
+
+  --white: #fff;
+  --white-2: #f5f5f5;
+  --white-3: #ededed;
+  --white-4: #f1f1f1;
+  --white-5: #f0fff0;
+  --black: #000;
+  --black-2: #333;
+  --black-3: #444;
+  --red: #ff0000;
+  --transparent: transparent;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --shadow-2: rgba(0, 0, 0, 0.1);
 }
 
 body {
