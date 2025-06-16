@@ -3,22 +3,22 @@ document.addEventListener("DOMContentLoaded", function () {
     // Profile section
     var profileImg = document.getElementById("profile-bg");
     if (profileImg) {
-      profileImg.src = "./images-for-phones/path8gray.webp";
+      profileImg.src = "./images-for-phones/path8gray-phone.webp";
     }
     // Skillset section
     var skillsetImg = document.getElementById("skillset-bg");
     if (skillsetImg) {
-      skillsetImg.src = "./images-for-phones/path6teal.webp";
+      skillsetImg.src = "./images-for-phones/path6teal-phone.webp";
     }
     // Projects section
     var projectsImg = document.getElementById("projects-bg");
     if (projectsImg) {
-      projectsImg.src = "./images-for-phones/path9orangered.webp";
+      projectsImg.src = "./images-for-phones/path9orangered-phone.webp";
     }
     // Contact section
     var contactImg = document.getElementById("contact-bg");
     if (contactImg) {
-      contactImg.src = "./images-for-phones/path13earth.webp";
+      contactImg.src = "./images-for-phones/path13earth-phone.webp";
     }
   }
 });
