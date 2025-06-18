@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Tab") {
-          e.preventDefault();
-          chevron.focus();
-        }
-      });
+      // document.addEventListener("keydown", function (e) {
+      //   if (e.key === "Tab") {
+      //     e.preventDefault();
+      //     chevron.focus();
+      //   }
+      // });
     }
 
     function transitionToProfile() {
