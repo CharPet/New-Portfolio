@@ -1,24 +1,6 @@
-:root {
-  --shark-black: #212529;
-  --text-white: #fefefe;
-  --mojo-red: #c23a3e;
-  --outline-gray: #808080;
-  --dark-cyan: #0092a0;
-  --lime-green: #12de97;
-  --dark-blue: #040358;
-  --dark-violet: #260f36;
-  --sunset-red: #f63f44;
-  --burnt-umber-red: #902528;
-  --apricot-orange: #e59e6f;
-  --envy-green: #8ba78d;
-  --validation-green: #28a745;
-  --chenin: #ded582;
-  --input-background-white: #fff0f0;
-}
-
 .project1 {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   max-width: 100vw;
@@ -91,8 +73,9 @@
 .project1 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  margin: 48px 56px 72px 56px;
+  row-gap: 2em;
+  column-gap: 2.5em;
+  /* margin: 48px 56px 72px 56px; */
 }
 
 .project1 .grid-item {
@@ -110,13 +93,6 @@
   text-decoration: none;
   color: inherit;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.project1 .grid-item .icon img {
-  width: 3.5rem;
-  height: 3.5rem;
-  display: block;
-  margin: 0 auto;
 }
 
 .project1 .grid-item .icon img {
@@ -275,7 +251,6 @@
   }
 }
 
-/* Small Mobile Styles */
 @media (max-width: 480px) {
   .project1-title {
     font-size: 1.3rem;
@@ -358,6 +333,5 @@
 
   .project1 .right {
     min-height: 0;
-    /* height: auto; */
   }
 }

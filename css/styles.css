@@ -47,6 +47,15 @@ html {
   position: relative; */
 }
 
+hr {
+  width: 50%;
+  border: 0;
+  height: 1px;
+  background: var(--shark-black);
+  background-image: linear-gradient(to right, #333, var(--shark-black), #333);
+  margin-bottom: 8em;
+}
+
 .hero {
   height: 100vh;
   scroll-snap-align: start;
