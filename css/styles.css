@@ -42,6 +42,7 @@ html {
 
 .container-scroll {
   height: 100vh;
+  overflow: hidden;
   /* overflow: clip;
   position: relative; */
 }
