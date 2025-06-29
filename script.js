@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let isTransitioning = false;
 
     // Chevron click handler
-    const chevron = document.getElementById("chevron-container-timeless");
+    let chevron = document.getElementById("chevron-container-timeless");
     if (chevron) {
       chevron.addEventListener("click", function (e) {
         e.preventDefault();
@@ -222,10 +222,10 @@ document.addEventListener("DOMContentLoaded", function () {
       // }
     }
 
-    // Chevron click handler for animation
-    chevron = document.getElementById("down-chevron-timeless");
-    if (chevron) {
-      chevron.addEventListener("click", function (e) {
+    // Chevron click handler for animation - use a different variable name
+    const downChevron = document.getElementById("down-chevron-timeless");
+    if (downChevron) {
+      downChevron.addEventListener("click", function (e) {
         e.preventDefault();
         // Run GSAP transition to .profile
         // ...
@@ -233,10 +233,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   } else {
     // Mobile/tablet: simple anchor scroll
-    chevron = document.getElementById("down-chevron-timeless");
-    if (chevron) {
-      chevron.parentElement.setAttribute("href", "#profile");
-      chevron.onclick = null;
+    const mobileChevron = document.getElementById("down-chevron-timeless");
+    if (mobileChevron) {
+      mobileChevron.parentElement.setAttribute("href", "#profile");
+      mobileChevron.onclick = null;
     }
     // Optionally, hide overlay/canvas if present
     const overlay = document.getElementById("transitionOverlay");
@@ -276,8 +276,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const template = document.getElementById("navbar-template");
+  // Navbar template injection
+  const template = document.getElementById("navbar-template");
+  if (template) {
     document.querySelectorAll(".left").forEach((left) => {
       // Avoid duplicate navbars if reloading or hot-reloading
       if (!left.querySelector(".navbar-small")) {
@@ -285,64 +286,72 @@ document.addEventListener("DOMContentLoaded", function () {
         left.appendChild(navClone);
       }
     });
-  });
+  }
 });
 
 // Add some interactive enhancements
-document.querySelectorAll(".nav-link-small").forEach((link) => {
-  link.addEventListener("mouseenter", function () {
-    gsap.to(this, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".nav-link-small").forEach((link) => {
+    link.addEventListener("mouseenter", function () {
+      gsap.to(this, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+    });
+
+    link.addEventListener("mouseleave", function () {
+      gsap.to(this, { scale: 1, duration: 0.3, ease: "power2.out" });
+    });
   });
 
-  link.addEventListener("mouseleave", function () {
-    gsap.to(this, { scale: 1, duration: 0.3, ease: "power2.out" });
-  });
+  // Add polygon hover effect
+  const polygon = document.querySelector(".polygon");
+  if (polygon) {
+    polygon.addEventListener("mouseenter", function () {
+      gsap.to(this, {
+        scale: 1.1,
+        rotation: 5,
+        duration: 0.4,
+        ease: "power2.out",
+      });
+    });
+
+    polygon.addEventListener("mouseleave", function () {
+      gsap.to(this, {
+        scale: 1,
+        rotation: 0,
+        duration: 0.4,
+        ease: "power2.out",
+      });
+    });
+  }
 });
-// Add polygon hover effect
-polygon = document.querySelector(".polygon");
-if (polygon) {
-  polygon.addEventListener("mouseenter", function () {
-    gsap.to(this, {
-      scale: 1.1,
-      rotation: 5,
-      duration: 0.4,
-      ease: "power2.out",
-    });
-  });
-
-  polygon.addEventListener("mouseleave", function () {
-    gsap.to(this, {
-      scale: 1,
-      rotation: 0,
-      duration: 0.4,
-      ease: "power2.out",
-    });
-  });
-}
 
 document.addEventListener("DOMContentLoaded", function () {
   const template = document.getElementById("navbar-template");
   const navPlaceholders = document.querySelectorAll(".nav-placeholder");
 
-  navPlaceholders.forEach((placeholder) => {
-    const navClone = template.content.cloneNode(true);
-    placeholder.appendChild(navClone);
-  });
+  if (template) {
+    navPlaceholders.forEach((placeholder) => {
+      const navClone = template.content.cloneNode(true);
+      placeholder.appendChild(navClone);
+    });
+  }
 });
 
 // Smooth scroll for right panel
-document
-  .querySelector("#profile .right")
-  .addEventListener("scroll", function () {
-    const scrolled = this.scrollTop;
-    const rate = scrolled * -0.3;
+document.addEventListener("DOMContentLoaded", function () {
+  const profileRight = document.querySelector("#profile .right");
+  if (profileRight) {
+    profileRight.addEventListener("scroll", function () {
+      const scrolled = this.scrollTop;
+      const rate = scrolled * -0.3;
 
-    gsap.to(".polygon", {
-      y: rate,
-      duration: 0.5,
-      ease: "power1.out",
+      gsap.to(".polygon", {
+        y: rate,
+        duration: 0.5,
+        ease: "power1.out",
+      });
     });
-  });
+  }
+});
 
 function disableScroll() {
   document.body.style.overflow = "hidden";
@@ -355,79 +364,106 @@ function enableScroll() {
 window.addEventListener("DOMContentLoaded", function () {
   // Profile SVG (if you want to keep animation for profile, leave as is)
   const svgContainer = document.querySelector(".left");
-  const svgElement = document.createElement("img");
-  svgElement.src = "./images/path8gray.webp";
-  svgElement.classList.add("decorative-svg");
-  svgElement.alt = "Decorative background pattern";
-  svgContainer.appendChild(svgElement);
+  if (svgContainer) {
+    const svgElement = document.createElement("img");
+    svgElement.src = "./images/path8gray.webp";
+    svgElement.classList.add("decorative-svg");
+    svgElement.alt = "Decorative background pattern";
+    svgContainer.appendChild(svgElement);
+  }
 
   disableScroll();
 });
 
-document
-  .querySelector('a[href="#skillset"]')
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-
-    // Smooth scroll to skillset section
-    document.querySelector("#skillset").scrollIntoView({
-      behavior: "smooth",
+// Navigation smooth scroll handlers
+document.addEventListener("DOMContentLoaded", function () {
+  const skillsetLink = document.querySelector('a[href="#skillset"]');
+  if (skillsetLink) {
+    skillsetLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      const skillsetSection = document.querySelector("#skillset");
+      if (skillsetSection) {
+        skillsetSection.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
     });
-  });
+  }
 
-document
-  .querySelector('a[href="#projects"]')
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-
-    // Smooth scroll to projects section
-    document.querySelector("#projects").scrollIntoView({
-      behavior: "smooth",
+  const projectsLink = document.querySelector('a[href="#projects"]');
+  if (projectsLink) {
+    projectsLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      const projectsSection = document.querySelector("#projects");
+      if (projectsSection) {
+        projectsSection.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
     });
-  });
+  }
 
-document
-  .querySelector('a[href="#contact"]')
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-
-    // Smooth scroll to contact section
-    document.querySelector("#contact").scrollIntoView({
-      behavior: "smooth",
+  const contactLink = document.querySelector('a[href="#contact"]');
+  if (contactLink) {
+    contactLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      const contactSection = document.querySelector("#contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
     });
-  });
+  }
+});
 
 window.addEventListener("load", function () {
+  const containerScroll = document.querySelector(".container-scroll");
+
   // Initially disable scrolling
-  document.querySelector(".container-scroll").style.overflowY = "hidden";
+  if (containerScroll) {
+    containerScroll.style.overflowY = "hidden";
+  }
 
   // Handle chevron click
-  document
-    .querySelector("#chevron-container-timeless")
-    .addEventListener("click", function (e) {
+  const chevronContainer = document.querySelector(
+    "#chevron-container-timeless"
+  );
+  if (chevronContainer) {
+    chevronContainer.addEventListener("click", function (e) {
       e.preventDefault();
 
       // Enable scrolling after transition
       setTimeout(() => {
-        document.querySelector(".container-scroll").style.overflowY = "hidden";
+        if (containerScroll) {
+          containerScroll.style.overflowY = "hidden";
+        }
       }, 2000); // Delay matches your transition time
 
       // Smooth scroll to profile section
-      document.querySelector("#profile").scrollIntoView({
-        behavior: "smooth",
-      });
+      const profileSection = document.querySelector("#profile");
+      if (profileSection) {
+        profileSection.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
     });
+  }
 
   // Prevent default scroll behavior in intro section
-  document.querySelector("#intro").addEventListener(
-    "wheel",
-    function (e) {
-      e.preventDefault();
-    },
-    { passive: false }
-  );
+  const introSection = document.querySelector("#intro");
+  if (introSection) {
+    introSection.addEventListener(
+      "wheel",
+      function (e) {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+  }
 });
 
+// Form validation code
 let fname = document.getElementById("fname");
 const lname = document.getElementById("lname");
 const email = document.getElementById("email");
@@ -674,12 +710,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-const textarea = document.getElementById("comments");
-if (textarea) {
-  textarea.addEventListener("input", function () {
-    validateTextareaWords(this);
-  });
-}
+// Textarea word validation
+document.addEventListener("DOMContentLoaded", function () {
+  const textarea = document.getElementById("comments");
+  if (textarea) {
+    textarea.addEventListener("input", function () {
+      validateTextareaWords(this);
+    });
+  }
+});
 
 // window.addEventListener("pageshow", function (event) {
 //   if (event.persisted) {
