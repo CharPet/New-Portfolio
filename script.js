@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   } else {
     // Mobile/tablet: simple anchor scroll
-    const chevron = document.getElementById("down-chevron-timeless");
+    chevron = document.getElementById("down-chevron-timeless");
     if (chevron) {
       chevron.parentElement.setAttribute("href", "#profile");
       chevron.onclick = null;
