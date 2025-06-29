@@ -53,7 +53,7 @@ hr {
   height: 1px;
   background: var(--shark-black);
   background-image: linear-gradient(to right, #333, var(--shark-black), #333);
-  margin-bottom: 8em;
+  margin-bottom: 6em;
 }
 
 .hero {
