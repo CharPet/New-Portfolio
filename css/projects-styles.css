@@ -8,6 +8,13 @@
   align-items: stretch;
 }
 
+.project1 .left,
+.project1 .right {
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
 .project1 .left {
   flex: 1;
   min-width: 0;
