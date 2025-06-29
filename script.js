@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (profileRight) {
       profileRight.style.opacity = "1";
     }
-    const polygon = document.querySelector("#profile .polygon");
+    let polygon = document.querySelector("#profile .polygon");
     if (polygon) {
       polygon.style.opacity = "1";
       polygon.style.transform = "scale(1) rotate(0deg)";
@@ -299,7 +299,7 @@ document.querySelectorAll(".nav-link-small").forEach((link) => {
   });
 });
 // Add polygon hover effect
-const polygon = document.querySelector(".polygon");
+polygon = document.querySelector(".polygon");
 if (polygon) {
   polygon.addEventListener("mouseenter", function () {
     gsap.to(this, {
