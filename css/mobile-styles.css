@@ -956,6 +956,7 @@ textarea.invalid + .input-error-message {
 #thanks {
   text-align: center;
   font-size: 1.6rem;
+  margin: 0 0.2em;
 }
 
 #inspiration {
@@ -994,6 +995,27 @@ textarea.invalid + .input-error-message {
 }
 
 @media (max-width: 600px) {
+  html,
+  body {
+    scroll-behavior: smooth;
+    overflow: auto !important;
+    height: auto !important;
+  }
+  .container-scroll {
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    height: 100vh;
+  }
+  .profile,
+  .skillset,
+  .projects,
+  .contact {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    height: 100vh;
+    overflow: visible;
+  }
+
   .profile,
   .skillset,
   .projects,
