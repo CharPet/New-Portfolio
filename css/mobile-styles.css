@@ -995,6 +995,11 @@ textarea.invalid + .input-error-message {
 }
 
 @media (max-width: 600px) {
+   body, html {
+    overflow: auto !important;
+    height: auto !important;
+  }
+ 
   html,
   body {
     scroll-behavior: smooth;
