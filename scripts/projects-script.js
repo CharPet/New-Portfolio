@@ -3,46 +3,100 @@
 // ===============================
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Dynamic content replacement in .project1 .right
+  const previewBtn = document.getElementById("preview-btn");
+  const videoOverlay = document.getElementById("video-overlay");
+  const closeVideoBtn = document.getElementById("close-video");
+  const video = document.getElementById("preview-video");
   const rightContent = document.getElementById("right-content");
-  if (rightContent) {
-    document.querySelectorAll(".grid-item[data-content]").forEach((item) => {
-      item.addEventListener("click", function () {
-        const key = this.getAttribute("data-content");
-        const contentMap = {
-          persona: `<embed src="../pdf/Βιογραφικό - Πέτρος Χαραλαμπίδης.pdf" type="application/pdf" width="100%" height="100%" style="border:none;">`,
-          sitemap: `<embed src="../pdf/design.pdf" type="application/pdf" width="100%" height="100%" style="border:none;">`,
-          userflow: `<img src="../images/path1.svg" alt="User Flow" style="width:100%;height:auto;display:block;">`,
-          taskflow: `<img src="../images/taskflow.png" alt="Task Flow" style="width:100%;height:auto;display:block;">`,
-        };
+  const defaultContent = rightContent.innerHTML;
 
-        // Fade out
-        rightContent.classList.add("fading");
+  // --- PDF Loading Logic (Simple iframe approach) ---
+  const pdfButtons = document.querySelectorAll(".grid-item[data-content]");
+  console.log("Found PDF buttons:", pdfButtons.length); // Debug
+
+  pdfButtons.forEach((button, index) => {
+    console.log(`Button ${index}:`, button.dataset.content); // Debug
+
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const pdfPath = this.dataset.content;
+      console.log("Clicked PDF button:", pdfPath); // Debug
+
+      if (pdfPath && pdfPath.toLowerCase().endsWith(".pdf")) {
+        // Show loading message
+        rightContent.innerHTML = `
+          <div style="display:flex; align-items:center; justify-content:center; height:100%; text-align:center; background:#f5f5f5;">
+            <p style="font-size:1.2rem;">Loading PDF...</p>
+          </div>
+        `;
+
+        // Try iframe first (simpler approach)
         setTimeout(() => {
-          rightContent.innerHTML = contentMap[key] || "";
-          // Fade in
-          rightContent.classList.remove("fading");
-        }, 400); // Match the CSS transition duration
-      });
+          rightContent.innerHTML = `
+            <div style="width:100%; height:100%; background:#f5f5f5; display:flex; flex-direction:column;">
+              <div style="background:#333; color:white; padding:10px; text-align:center; font-size:0.9rem;">
+                ${pdfPath.split("/").pop()} | 
+                <a href="${pdfPath}" target="_blank" style="color:#4CAF50; text-decoration:none;">Open in New Tab</a>
+              </div>
+              <iframe 
+                src="${pdfPath}" 
+                style="width:100%; height:calc(100% - 40px); border:none; background:white;"
+                onload="console.log('PDF iframe loaded')"
+                onerror="console.log('PDF iframe failed')">
+                <div style="padding:2rem; text-align:center;">
+                  <p>Unable to display PDF inline.</p>
+                  <a href="${pdfPath}" target="_blank" style="background:#212529; color:white; padding:0.5rem 1rem; text-decoration:none; border-radius:4px;">
+                    Open PDF in New Tab
+                  </a>
+                </div>
+              </iframe>
+            </div>
+          `;
+        }, 500);
+      }
+    });
+  });
+
+  // --- Video Overlay Logic ---
+  if (previewBtn) {
+    previewBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("Preview button clicked"); // Debug
+
+      rightContent.innerHTML = defaultContent;
+      if (videoOverlay) {
+        videoOverlay.style.display = "flex";
+        if (video) {
+          video.play();
+        }
+      }
     });
   }
 
-  // Video overlay functionality
-  const previewBtn = document.getElementById("preview-btn");
-  const videoOverlay = document.getElementById("video-overlay");
-  const previewVideo = document.getElementById("preview-video");
-  const closeVideoBtn = document.getElementById("close-video");
-
-  if (previewBtn && videoOverlay && previewVideo && closeVideoBtn) {
-    previewBtn.addEventListener("click", function () {
-      videoOverlay.style.display = "flex";
-      previewVideo.currentTime = 0;
-      previewVideo.play();
-    });
-
+  if (closeVideoBtn) {
     closeVideoBtn.addEventListener("click", function () {
-      videoOverlay.style.display = "none";
-      previewVideo.pause();
+      if (videoOverlay) {
+        videoOverlay.style.display = "none";
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
+  }
+
+  if (videoOverlay) {
+    videoOverlay.addEventListener("click", function (e) {
+      if (e.target === videoOverlay) {
+        videoOverlay.style.display = "none";
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
     });
   }
 });

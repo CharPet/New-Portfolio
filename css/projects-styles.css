@@ -70,6 +70,13 @@
   white-space: nowrap;
 }
 
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -115,8 +122,9 @@
 }
 
 .grid-item {
-  display: flex;
+  display: flex !important;
   align-items: center;
+  justify-content: flex-start;
   background-color: var(--text-white);
   padding: clamp(12px, 3vw, 16px);
   font-size: clamp(1rem, 2.5vw, 1.25rem);
@@ -129,6 +137,22 @@
   text-decoration: none;
   color: inherit;
   transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  /* Make the entire button clickable */
+  position: relative;
+}
+
+/* Prevent child elements from intercepting clicks */
+.grid-item > * {
+  pointer-events: none;
+}
+
+/* Re-enable clicks for actual links */
+.grid-item a {
+  pointer-events: auto;
+  color: inherit;
+  text-decoration: none;
 }
 
 .grid-item:hover {
@@ -203,6 +227,15 @@
   font-size: 2em;
   cursor: pointer;
   z-index: 2;
+}
+
+#visit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#visit-link {
+  cursor: not-allowed;
 }
 
 @media (max-width: 768px) {

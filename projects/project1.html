@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../css/globals.css" />
     <link rel="stylesheet" href="../css/projects-styles.css" />
     <link rel="stylesheet" href="../fonts/stylesheet.css" />
-    <script src="../scripts/projects-script.js" defer></script>
     <title>Project1</title>
   </head>
   <body>
@@ -22,13 +21,62 @@
           υποστήριξη για μελλοντική πολυγλωσσική ανάπτυξη.
         </p>
         <div class="tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">PHP</span>
-          <span class="tag">WordPress</span>
-          <span class="tag">LocalWP</span>
-          <span class="tag">Figma</span>
+          <span class="tag"
+            ><img
+              src="../logos/HTML5_Badge.svg"
+              alt="HTML Logo"
+              width="24"
+              height="24"
+            />HTML</span
+          >
+          <span class="tag"
+            ><img
+              src="../logos/CSS3_logo.svg"
+              alt="CSS Logo"
+              width="24"
+              height="24"
+            />CSS</span
+          >
+          <span class="tag"
+            ><img
+              src="../logos/Unofficial_JavaScript_logo_2.svg"
+              alt="JavaScript Logo"
+              width="24"
+              height="24"
+            />JavaScript</span
+          >
+          <span class="tag"
+            ><img
+              src="../logos/PHP-logo.svg"
+              alt="PHP Logo"
+              width="36"
+              height="24"
+            />PHP</span
+          >
+          <span class="tag"
+            ><img
+              src="../logos/WordPress_blue_logo.svg"
+              alt="WordPress Logo"
+              width="24"
+              height="24"
+            />WordPress</span
+          >
+          <span class="tag">
+            <img
+              src="../logos/local-lightning-icon.webp"
+              alt="LocalWP Logo"
+              width="24"
+              height="24"
+            />LocalWP</span
+          >
+          <span class="tag">
+            <img
+              src="../logos/Figma-logo.svg"
+              alt="Figma Logo"
+              width="24"
+              height="24"
+            />Figma</span
+          >
         </div>
 
         <div class="project1">
@@ -42,7 +90,8 @@
               </div>
               <div id="preview-btn2">Προεπισκόπηση ιστοσελίδας</div>
             </button>
-            <button class="grid-item">
+
+            <button class="grid-item" type="button" id="visit-btn" disabled>
               <div class="icon">
                 <img
                   src="../icons/New Window Alt Fill Streamline Outlined Fill - Material Pro.svg"
@@ -50,15 +99,25 @@
                 />
               </div>
               <div>
-                <a href="#" target="_blank">Επίσκεψη ιστοσελίδας</a>
+                <a id="visit-link" href="#" target="_blank"
+                  >Επίσκεψη ιστοσελίδας</a
+                >
               </div>
             </button>
+
             <button class="grid-item">
               <div class="icon">
                 <img src="../logos/github.svg" alt="Link Icon" />
               </div>
-              <div><a href="#" target="_blank">Προβολή κώδικα (GitHub)</a></div>
+              <div>
+                <a
+                  href="https://github.com/CharPet/Coffee-Roastery"
+                  target="_blank"
+                  >Προβολή κώδικα (GitHub)</a
+                >
+              </div>
             </button>
+
             <button class="grid-item">
               <div class="icon">
                 <img
@@ -66,9 +125,19 @@
                   alt="Link Icon"
                 />
               </div>
-              <div><a href="#" target="_blank">Figma Design File</a></div>
+              <div>
+                <a
+                  href="https://www.figma.com/design/9XGnKGINA9GGl8dtdaOhu8/Terra-Coffee?node-id=0-1&m=dev&t=Oez3OATdGpak4U79-1"
+                  target="_blank"
+                  >Figma Design File</a
+                >
+              </div>
             </button>
-            <button class="grid-item" data-content="persona">
+
+            <button
+              class="grid-item"
+              data-content="../pdf/project1/UserPersonas.pdf"
+            >
               <div class="icon">
                 <img
                   src="../icons/Contacts Product Fill Streamline Rounded Fill - Material Symbols.svg"
@@ -77,7 +146,11 @@
               </div>
               <div>Περσόνα Χρήστη</div>
             </button>
-            <button class="grid-item" data-content="Sitemap">
+
+            <button
+              class="grid-item"
+              data-content="../pdf/project1/Sitemap.pdf"
+            >
               <div class="icon">
                 <img
                   src="../icons/Web Hierarchy Streamline Outlined Line - Material Pro.svg"
@@ -86,7 +159,11 @@
               </div>
               <div>Sitemap</div>
             </button>
-            <button class="grid-item" data-content="userflow">
+
+            <button
+              class="grid-item"
+              data-content="../pdf/project1/UserFlow.pdf"
+            >
               <div class="icon">
                 <img
                   src="../icons/Person Transaction Fill Streamline Outlined Fill - Material Pro.svg"
@@ -95,7 +172,11 @@
               </div>
               <div>User Flow</div>
             </button>
-            <button class="grid-item" data-content="taskflow">
+
+            <button
+              class="grid-item"
+              data-content="../pdf/project1/TaskFlow.pdf"
+            >
               <div class="icon">
                 <img
                   src="../icons/Arrow Roadmap Streamline Outlined Line - Material Pro.svg"
@@ -129,7 +210,8 @@
       </div>
     </div>
 
+    <!-- Fix PDF.js loading - only load the main script, not the worker -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.js"></script>
+    <script src="../scripts/projects-script.js"></script>
   </body>
 </html>
