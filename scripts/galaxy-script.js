@@ -10,7 +10,7 @@ const orbits = [
     line: "line2",
     planets: ["php-planet", "mysql-planet", "wordpress-planet"],
     speed: 0.0025,
-    clockwise: false, // Counter-clockwise
+    clockwise: false,
   },
   {
     line: "line3",
@@ -22,7 +22,7 @@ const orbits = [
     line: "line4",
     planets: ["opengl-planet", "onshape-planet", "unreal-planet"],
     speed: 0.0018,
-    clockwise: false, // Counter-clockwise
+    clockwise: false,
   },
   {
     line: "line5",
@@ -39,7 +39,7 @@ const orbits = [
     line: "line6",
     planets: ["premiere-planet", "davinci-planet"],
     speed: 0.0012,
-    clockwise: false, // Counter-clockwise
+    clockwise: false,
   },
   {
     line: "line7",
@@ -89,9 +89,9 @@ function animate() {
         y: document.querySelector(".space").offsetHeight / 2,
       };
 
-      planet.style.left = `${spaceCenter.x + pos.x - 24}px`; // 24 is half planet width
-      planet.style.top = `${spaceCenter.y + pos.y - 24}px`; // 24 is half planet height
-      planet.style.transform = "none"; // Remove the translate transform
+      planet.style.left = `${spaceCenter.x + pos.x - 24}px`;
+      planet.style.top = `${spaceCenter.y + pos.y - 24}px`;
+      planet.style.transform = "none";
     });
 
     // Update angle for next frame

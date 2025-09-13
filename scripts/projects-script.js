@@ -10,29 +10,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const rightContent = document.getElementById("right-content");
   const defaultContent = rightContent.innerHTML;
 
-  // --- PDF Loading Logic (Simple iframe approach) ---
   const pdfButtons = document.querySelectorAll(".grid-item[data-content]");
-  console.log("Found PDF buttons:", pdfButtons.length); // Debug
+  console.log("Found PDF buttons:", pdfButtons.length);
 
   pdfButtons.forEach((button, index) => {
-    console.log(`Button ${index}:`, button.dataset.content); // Debug
+    console.log(`Button ${index}:`, button.dataset.content);
 
     button.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
 
       const pdfPath = this.dataset.content;
-      console.log("Clicked PDF button:", pdfPath); // Debug
+      console.log("Clicked PDF button:", pdfPath);
 
       if (pdfPath && pdfPath.toLowerCase().endsWith(".pdf")) {
-        // Show loading message
         rightContent.innerHTML = `
           <div style="display:flex; align-items:center; justify-content:center; height:100%; text-align:center; background:#f5f5f5;">
             <p style="font-size:1.2rem;">Loading PDF...</p>
           </div>
         `;
 
-        // Try iframe first (simpler approach)
         setTimeout(() => {
           rightContent.innerHTML = `
             <div style="width:100%; height:100%; background:#f5f5f5; display:flex; flex-direction:column;">
@@ -60,43 +57,43 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // --- Video Overlay Logic ---
-  if (previewBtn) {
-    previewBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      console.log("Preview button clicked"); // Debug
+  // if (previewBtn) {
+  //   previewBtn.addEventListener("click", function (e) {
+  //     e.preventDefault();
+  //     e.stopPropagation();
+  //     console.log("Preview button clicked"); // Debug
 
-      rightContent.innerHTML = defaultContent;
-      if (videoOverlay) {
-        videoOverlay.style.display = "flex";
-        if (video) {
-          video.play();
-        }
-      }
-    });
-  }
+  //     rightContent.innerHTML = defaultContent;
+  //     if (videoOverlay) {
+  //       videoOverlay.style.display = "flex";
+  //       if (video) {
+  //         video.play();
+  //       }
+  //     }
+  //   });
+  // }
 
-  if (closeVideoBtn) {
-    closeVideoBtn.addEventListener("click", function () {
-      if (videoOverlay) {
-        videoOverlay.style.display = "none";
-        if (video) {
-          video.pause();
-          video.currentTime = 0;
-        }
-      }
-    });
-  }
+  // if (closeVideoBtn) {
+  //   closeVideoBtn.addEventListener("click", function () {
+  //     if (videoOverlay) {
+  //       videoOverlay.style.display = "none";
+  //       if (video) {
+  //         video.pause();
+  //         video.currentTime = 0;
+  //       }
+  //     }
+  //   });
+  // }
 
-  if (videoOverlay) {
-    videoOverlay.addEventListener("click", function (e) {
-      if (e.target === videoOverlay) {
-        videoOverlay.style.display = "none";
-        if (video) {
-          video.pause();
-          video.currentTime = 0;
-        }
-      }
-    });
-  }
+  // if (videoOverlay) {
+  //   videoOverlay.addEventListener("click", function (e) {
+  //     if (e.target === videoOverlay) {
+  //       videoOverlay.style.display = "none";
+  //       if (video) {
+  //         video.pause();
+  //         video.currentTime = 0;
+  //       }
+  //     }
+  //   });
+  // }
 });
