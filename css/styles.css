@@ -135,12 +135,105 @@ hr {
 
 .hero-image-container {
   margin: 4rem auto;
+  position: relative;
+  display: inline-block;
 }
 
-.hero-image {
+.hero-image,
+.hero-image-hover,
+.hero-image-glow {
   object-fit: cover;
   max-width: 100%;
   height: auto;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-image {
+  position: relative; /* Default image stays in document flow */
+  opacity: 1;
+}
+
+.hero-image-hover,
+.hero-image-glow {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hover state: show charcoal, hide others */
+.hero-image-container:hover .hero-image {
+  opacity: 0;
+}
+
+.hero-image-container:hover .hero-image-hover {
+  opacity: 1;
+}
+
+.hero-image-container:hover .hero-image-glow {
+  opacity: 0;
+}
+
+/* Mouse out state after hover: show glow */
+.hero-image-container.after-hover .hero-image {
+  opacity: 0;
+}
+
+.hero-image-container.after-hover .hero-image-hover {
+  opacity: 0;
+}
+
+.hero-image-container.after-hover .hero-image-glow {
+  opacity: 1;
+}
+
+/* Tooltip styles - show on hover AND after-hover */
+.hero-image-container::after {
+  content: "Work in progress";
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(33, 37, 41, 0.9);
+  color: var(--text-white);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: "Vollkorn", sans-serif;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* Show tooltip on hover AND after-hover */
+.hero-image-container:hover::after,
+.hero-image-container.after-hover::after {
+  opacity: 1;
+}
+
+/* Tooltip arrow - show on hover AND after-hover */
+.hero-image-container::before {
+  content: "";
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid rgba(33, 37, 41, 0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.hero-image-container:hover::before,
+.hero-image-container.after-hover::before {
+  opacity: 1;
 }
 
 #chevron-container-timeless {

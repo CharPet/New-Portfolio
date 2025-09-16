@@ -3,12 +3,43 @@ function isMobile() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  const heroImageContainer = document.querySelector(".hero-image-container");
+
+  if (heroImageContainer) {
+    let hasBeenHovered = false;
+    let glowTimeout;
+
+    heroImageContainer.addEventListener("mouseenter", function () {
+      hasBeenHovered = true;
+      this.classList.remove("after-hover");
+
+      // Clear any existing timeout
+      if (glowTimeout) {
+        clearTimeout(glowTimeout);
+      }
+    });
+
+    heroImageContainer.addEventListener("mouseleave", function () {
+      if (hasBeenHovered) {
+        this.classList.add("after-hover");
+
+        // Set timeout to remove glow effect and tooltip
+        glowTimeout = setTimeout(() => {
+          this.classList.remove("after-hover");
+          hasBeenHovered = false;
+        }, 3000); // Keep glow and tooltip for 3 seconds
+      }
+    });
+
+    // Optional: Remove glow effect immediately if user hovers again
+    heroImageContainer.addEventListener("mouseenter", function () {
+      if (glowTimeout) {
+        clearTimeout(glowTimeout);
+      }
+    });
+  }
+
   if (!isMobile()) {
-    // Desktop/laptop only: enable GSAP, transition overlay, container-scroll, finisher-header, etc.
-
-    // ...your GSAP animation and overlay code here...
-    // Only declare once!
-
     let isTransitioning = false;
 
     // Chevron click handler
@@ -98,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
           "-=0.6"
         )
 
-        // Remove or comment out the h2 animation
         /* .to(
       "#profile .left h2",
       {
