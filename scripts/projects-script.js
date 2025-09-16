@@ -10,26 +10,63 @@ document.addEventListener("DOMContentLoaded", function () {
   const rightContent = document.getElementById("right-content");
   const defaultContent = rightContent.innerHTML;
 
+  // --- Handle all buttons with data-url attributes ---
+  const urlButtons = document.querySelectorAll(".grid-item[data-url]");
+  console.log("Found URL buttons:", urlButtons.length); // Debug
+
+  urlButtons.forEach((button, index) => {
+    console.log(`Button ${index}:`, button.dataset.url); // Debug
+
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const url = this.dataset.url;
+      const buttonId = this.id;
+
+      console.log("Button clicked:", buttonId, "URL:", url); // Debug
+
+      // Don't do anything for disabled buttons or empty URLs
+      if (this.disabled || !url || url === "#") {
+        console.log("Button is disabled or has no URL");
+        return;
+      }
+
+      // Handle different button types
+      if (buttonId === "preview-btn") {
+        // For preview button, you can either open the video or show in overlay
+        // Currently opening YouTube link in new tab
+        window.open(url, "_blank");
+      } else {
+        // For other buttons (GitHub, Figma), open in new tab
+        window.open(url, "_blank");
+      }
+    });
+  });
+
+  // --- PDF Loading Logic ---
   const pdfButtons = document.querySelectorAll(".grid-item[data-content]");
-  console.log("Found PDF buttons:", pdfButtons.length);
+  console.log("Found PDF buttons:", pdfButtons.length); // Debug
 
   pdfButtons.forEach((button, index) => {
-    console.log(`Button ${index}:`, button.dataset.content);
+    console.log(`PDF Button ${index}:`, button.dataset.content); // Debug
 
     button.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
 
       const pdfPath = this.dataset.content;
-      console.log("Clicked PDF button:", pdfPath);
+      console.log("Clicked PDF button:", pdfPath); // Debug
 
       if (pdfPath && pdfPath.toLowerCase().endsWith(".pdf")) {
+        // Show loading message
         rightContent.innerHTML = `
           <div style="display:flex; align-items:center; justify-content:center; height:100%; text-align:center; background:#f5f5f5;">
             <p style="font-size:1.2rem;">Loading PDF...</p>
           </div>
         `;
 
+        // Try iframe approach
         setTimeout(() => {
           rightContent.innerHTML = `
             <div style="width:100%; height:100%; background:#f5f5f5; display:flex; flex-direction:column;">
@@ -56,44 +93,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // --- Video Overlay Logic ---
-  // if (previewBtn) {
-  //   previewBtn.addEventListener("click", function (e) {
-  //     e.preventDefault();
-  //     e.stopPropagation();
-  //     console.log("Preview button clicked"); // Debug
+  // --- Video Overlay Logic (if you decide to use it later) ---
+  if (closeVideoBtn) {
+    closeVideoBtn.addEventListener("click", function () {
+      if (videoOverlay) {
+        videoOverlay.style.display = "none";
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
+  }
 
-  //     rightContent.innerHTML = defaultContent;
-  //     if (videoOverlay) {
-  //       videoOverlay.style.display = "flex";
-  //       if (video) {
-  //         video.play();
-  //       }
-  //     }
-  //   });
-  // }
-
-  // if (closeVideoBtn) {
-  //   closeVideoBtn.addEventListener("click", function () {
-  //     if (videoOverlay) {
-  //       videoOverlay.style.display = "none";
-  //       if (video) {
-  //         video.pause();
-  //         video.currentTime = 0;
-  //       }
-  //     }
-  //   });
-  // }
-
-  // if (videoOverlay) {
-  //   videoOverlay.addEventListener("click", function (e) {
-  //     if (e.target === videoOverlay) {
-  //       videoOverlay.style.display = "none";
-  //       if (video) {
-  //         video.pause();
-  //         video.currentTime = 0;
-  //       }
-  //     }
-  //   });
-  // }
+  if (videoOverlay) {
+    videoOverlay.addEventListener("click", function (e) {
+      if (e.target === videoOverlay) {
+        videoOverlay.style.display = "none";
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
+  }
 });

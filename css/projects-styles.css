@@ -139,36 +139,25 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   width: 100%;
   box-sizing: border-box;
-  /* Make the entire button clickable */
   position: relative;
 }
 
 /* Prevent child elements from intercepting clicks */
-.grid-item > * {
-  pointer-events: none;
+.grid-item > *,
+.grid-item img,
+.grid-item div,
+.grid-item .icon {
+  pointer-events: none !important;
 }
 
-/* Re-enable clicks for actual links */
-.grid-item a {
-  pointer-events: auto;
-  color: inherit;
-  text-decoration: none;
-}
-
-.grid-item:hover {
+.grid-item:hover:not(:disabled) {
   background-color: var(--chenin);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.grid-item .icon img {
-  width: clamp(2.5rem, 6vw, 3.5rem);
-  height: clamp(2.5rem, 6vw, 3.5rem);
-  display: block;
-}
-
-.grid-item a {
-  color: inherit;
-  text-decoration: none;
+.grid-item:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 #right-content {

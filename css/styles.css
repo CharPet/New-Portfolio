@@ -116,6 +116,18 @@ hr {
   -webkit-text-fill-color: transparent;
 }
 
+.hero-title,
+.hero-subtitle,
+#intro aside,
+#intro aside span {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
 #intro aside {
   display: flex;
   flex-direction: column;
@@ -190,7 +202,7 @@ hr {
 
 /* Tooltip styles - show on hover AND after-hover */
 .hero-image-container::after {
-  content: "Work in progress";
+  content: "Work in progress...";
   position: absolute;
   bottom: -40px;
   left: 50%;
