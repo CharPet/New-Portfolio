@@ -43,6 +43,7 @@
     clamp(24px, 5vw, 56px);
   font-weight: 500;
   line-height: 1.2;
+  margin-bottom: 1.8em;
 }
 
 .project-description {
