@@ -54,6 +54,16 @@
   line-height: 1.6;
 }
 
+.project-tech {
+  font-family: "Vollkorn", sans-serif;
+  margin: clamp(12px, 3vw, 24px) clamp(24px, 5vw, 56px);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.6;
+  font-size: 1.5rem;
+  margin-top: 1.8em;
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
