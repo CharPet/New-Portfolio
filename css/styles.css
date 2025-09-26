@@ -555,6 +555,7 @@ h2 {
   line-height: 1.2;
   opacity: 0;
   transform: translateX(50px);
+  margin-bottom: 2em;
 }
 
 h3 {
@@ -609,9 +610,9 @@ h3 {
 }
 
 .h4-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin: 20px 56px 20px 118px;
-  font-size: clamp(1rem, 0.75rem + 1.25vw, 1.5rem);
+  font-size: clamp(1rem, 0.75rem + 1.25vw, 1.6rem);
   font-weight: 500;
 }
 
@@ -647,7 +648,7 @@ h3 {
 }
 
 .last-paragraph {
-  padding-bottom: 40px;
+  padding-bottom: 2em;
 }
 
 .profile.building .navbar-small,
@@ -926,9 +927,9 @@ h3 {
   opacity: 1;
 }
 
-.contact .right p:nth-of-type(2) {
+/* .contact .right p:nth-of-type(2) {
   margin-bottom: 48px;
-}
+} */
 
 .contact-container {
   display: flex;
@@ -936,13 +937,15 @@ h3 {
 }
 
 .contact-details {
-  width: 50%;
+  /* width: 50%; */
   font-size: 1.2rem;
   font-size: clamp(0.8rem, 0.6rem + 1.25vw, 1.2rem);
   font-family: "Vollkorn", sans-serif;
-  display: inline-block;
+  /* display: inline-block; */
   flex-direction: column;
   gap: 0.5rem;
+  text-align: center;
+  margin: 3em auto;
 }
 
 .contact-details p:first-child {
@@ -971,7 +974,7 @@ h3 {
 }
 
 #form {
-  margin: 24px 56px 64px 56px;
+  margin: 4em 56px 64px 56px;
 }
 
 #fieldset {
@@ -1225,4 +1228,25 @@ textarea.invalid + .input-error-message {
 #intro,
 .hero {
   opacity: 1 !important;
+}
+
+.ordered-list {
+  font-family: "Vollkorn", sans-serif;
+  margin: 20px 56px 20px 118px;
+  font-size: 1.3rem;
+  font-size: clamp(0.9rem, 0.65rem + 1.25vw, 1.3rem);
+  font-weight: 400;
+  line-height: 1.6;
+  opacity: 0;
+  max-width: 90%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+  font-style: italic;
+}
+
+.ordered-list li::first-letter {
+  /* font-weight: 600; */
+  font-size: 1.5rem;
+  font-style: italic;
 }

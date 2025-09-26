@@ -198,6 +198,18 @@ document.addEventListener("DOMContentLoaded", function () {
         )
 
         .to(
+          "#profile .right .ordered-list",
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.01,
+            stagger: 0.01,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        )
+
+        .to(
           "#profile .right .container",
           {
             opacity: 1,
@@ -214,7 +226,18 @@ document.addEventListener("DOMContentLoaded", function () {
           {
             opacity: 1,
             y: 0,
-            duration: 0.6,
+            duration: 0.5,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        )
+
+        .to(
+          "#profile .js-hr",
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.01,
             ease: "power2.out",
           },
           "-=0.4"
@@ -491,6 +514,81 @@ window.addEventListener("load", function () {
       { passive: false }
     );
   }
+});
+
+// Add this function to restore the finisher canvas
+function restoreFinisherCanvas() {
+  // Check if canvas already exists
+  let finisherCanvas = document.getElementById("finisher-canvas");
+
+  if (!finisherCanvas) {
+    // If canvas was removed, reinitialize the finisher header
+    if (typeof FinisherHeader !== "undefined") {
+      new FinisherHeader({
+        count: 70,
+        size: {
+          min: 1300,
+          max: 1500,
+          pulse: 0,
+        },
+        speed: {
+          x: {
+            min: 0.1,
+            max: 0.6,
+          },
+          y: {
+            min: 0.1,
+            max: 0.6,
+          },
+        },
+        colors: {
+          particles: [
+            "#fffcf2",
+            "#403d39",
+            "#252422",
+            "#ccc5b9",
+            "#eb5e28",
+            "#14213d",
+            "#ffffff",
+            "#14213d",
+          ],
+        },
+        blending: "overlay",
+        opacity: {
+          center: 0.3,
+          edge: 0.05,
+        },
+        skew: 0,
+        shapes: ["c"],
+      });
+    }
+  } else {
+    // If canvas exists but is hidden, show it
+    finisherCanvas.style.display = "block";
+  }
+}
+
+// Update your navigation handlers
+document.addEventListener("DOMContentLoaded", function () {
+  // Add handler for ΑΡΧΙΚΗ navigation
+  document.addEventListener("click", function (e) {
+    if (e.target.matches('a[href="#intro"], a[href="#intro"] span')) {
+      e.preventDefault();
+
+      // Scroll to intro section
+      const introSection = document.getElementById("intro");
+      if (introSection) {
+        introSection.scrollIntoView({
+          behavior: "smooth",
+        });
+
+        // Restore finisher canvas after a short delay
+        setTimeout(() => {
+          restoreFinisherCanvas();
+        }, 500);
+      }
+    }
+  });
 });
 
 // Form validation code
