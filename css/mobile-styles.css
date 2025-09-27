@@ -1007,17 +1007,6 @@ textarea.invalid + .input-error-message {
   font-style: italic;
 }
 
-@media only screen and (max-width: 425px) {
-  .hero-image-container {
-    max-width: 80%;
-    height: auto;
-  }
-
-  /* .finisher-header {
-    width: 100%
-  } */
-}
-
 @media (max-width: 600px) {
   body,
   html {
@@ -1031,11 +1020,13 @@ textarea.invalid + .input-error-message {
     overflow: auto !important;
     height: auto !important;
   }
+
   .container-scroll {
     scroll-snap-type: y mandatory;
     overflow-y: auto;
     height: 100vh;
   }
+
   .profile,
   .skillset,
   .projects,
@@ -1054,18 +1045,18 @@ textarea.invalid + .input-error-message {
   }
 
   .left {
-    touch-action: none; /* Disable default touch handling on left sections */
+    touch-action: none;
   }
 
   .right {
-    touch-action: pan-y; /* Enable vertical scrolling on right sections */
+    touch-action: pan-y;
     -webkit-overflow-scrolling: touch;
     overflow-y: auto;
   }
 
   .navbar-toggle {
     display: block;
-    position: fixed; /* Change to fixed */
+    position: fixed;
     right: 0.5em;
     top: 0em;
     padding: 0.5em;
@@ -1085,7 +1076,7 @@ textarea.invalid + .input-error-message {
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    transform: none; /* Prevent any transforms */
+    transform: none;
   }
 
   .navbar-toggle.active {
@@ -1099,7 +1090,7 @@ textarea.invalid + .input-error-message {
   }
   .navbar-logo {
     display: none;
-    position: fixed; /* Change to fixed */
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
     top: 1.5em;
@@ -1110,11 +1101,12 @@ textarea.invalid + .input-error-message {
     transition: opacity 0.3s ease;
   }
   .navbar-logo img {
-    width: 100%; /* Make image fill the container */
+    width: 100%;
     height: 100%;
-    object-fit: contain; /* Maintain aspect ratio */
+    object-fit: contain;
     vertical-align: middle;
   }
+
   /* 
   .navbar-logo.active {
    display: flex;
@@ -1135,10 +1127,10 @@ textarea.invalid + .input-error-message {
     width: 100vw;
     background: rgba(33, 37, 41, 0.97);
     position: absolute;
-    top: 0; /* Start from the top */
+    top: 0;
     left: 0;
     z-index: 150;
-    padding-top: 4.5em; /* Add space for logo/menu */
+    padding-top: 4.5em;
     margin: 0;
   }
 
@@ -1280,6 +1272,15 @@ textarea.invalid + .input-error-message {
 }
 
 @media (max-width: 425px) {
+  .hero-image-container {
+    max-width: 80%;
+    height: auto;
+  }
+
+  /* .finisher-header {
+    width: 100%
+  } */
+
   .right {
     width: 100%;
     max-width: 100%;
@@ -1289,14 +1290,15 @@ textarea.invalid + .input-error-message {
   }
 
   .planet-grid {
-    /* width: 90%;
-    max-width: 90%; */
-    /* margin: 0 auto; */
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5em;
-    justify-items: center; /* Ensures children are centered */
+    justify-items: center;
   }
+
   .planet-group.four-planets {
     display: flex;
     flex-wrap: wrap;
@@ -1306,19 +1308,17 @@ textarea.invalid + .input-error-message {
   }
 
   .planet-group.four-planets .planet {
-    flex: 0 0 calc(50% - 0.5em); /* Exactly 50% width minus gap */
+    flex: 0 0 calc(50% - 0.5em);
     max-width: calc(50% - 0.5em);
     min-width: 0;
     margin: 0;
   }
 
-  /* Force first two planets to be in first row */
   .planet-group.four-planets .planet:nth-child(1),
   .planet-group.four-planets .planet:nth-child(2) {
     margin-bottom: 1em;
   }
 
-  /* Force last two planets to be in second row */
   .planet-group.four-planets .planet:nth-child(3),
   .planet-group.four-planets .planet:nth-child(4) {
     margin-top: 1em;
@@ -1330,6 +1330,11 @@ textarea.invalid + .input-error-message {
 
   #h4-mobile-only {
     display: block;
+  }
+
+  .contact-details p {
+    font-size: 1.2rem !important;
+    font-size: clamp(0.9rem, 0.65rem + 1.25vw, 1.2rem);
   }
 }
 
@@ -1367,25 +1372,23 @@ textarea.invalid + .input-error-message {
   .planet-group.four-planets {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8em; /* Slightly smaller gap for smaller screens */
+    gap: 0.8em;
     justify-content: center;
     max-width: 100%;
   }
 
   .planet-group.four-planets .planet {
-    flex: 0 0 calc(50% - 0.4em); /* Adjusted for smaller gap */
+    flex: 0 0 calc(50% - 0.4em);
     max-width: calc(50% - 0.4em);
     min-width: 0;
     margin: 0;
   }
 
-  /* Force first two planets to be in first row */
   .planet-group.four-planets .planet:nth-child(1),
   .planet-group.four-planets .planet:nth-child(2) {
     margin-bottom: 0.8em;
   }
 
-  /* Force last two planets to be in second row */
   .planet-group.four-planets .planet:nth-child(3),
   .planet-group.four-planets .planet:nth-child(4) {
     margin-top: 0.8em;
