@@ -1252,7 +1252,7 @@ textarea.invalid + .input-error-message {
 
   input,
   textarea {
-    border: 2px groove rgba(0, 0, 0, 0.3);
+    border: 2px groove rgba(0, 0, 0, 0.6);
   }
 
   #inspiration {
@@ -1393,6 +1393,11 @@ textarea.invalid + .input-error-message {
 
   #h4-mobile-only {
     display: block;
+  }
+
+  .contact-details p {
+    font-size: 1.2rem !important;
+    font-size: clamp(0.9rem, 0.65rem + 1.25vw, 1.2rem);
   }
 }
 
