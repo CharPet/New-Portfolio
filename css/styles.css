@@ -1246,7 +1246,6 @@ textarea.invalid + .input-error-message {
 }
 
 .ordered-list li::first-letter {
-  /* font-weight: 600; */
   font-size: 1.5rem;
   font-style: italic;
 }

@@ -749,32 +749,36 @@ iframe {
   opacity: 1;
 }
 
+/* 
 .contact .right p:nth-of-type(2) {
   margin-bottom: 48px;
-}
+} */
 
 .contact-details {
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.6rem + 1.25vw, 1.6rem);
+  /* width: 50%; */
+  font-size: 1.2rem;
+  font-size: clamp(0.8rem, 0.6rem + 1.25vw, 1.2rem);
   font-family: "Vollkorn", sans-serif;
-  display: flex;
+  /* display: inline-block; */
   flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  gap: 0.3em;
-  margin: 2em 1.8em;
-  /* text-align: center; */
+  gap: 0.5rem;
+  text-align: center;
+  margin: 3em auto;
 }
 
 .contact-details p:first-child {
-  font-size: 1.4rem;
-  font-size: clamp(1.4rem, 0.6rem + 1.25vw, 1.6rem);
+  font-size: 1.4em;
+  font-size: clamp(0.8rem, 0.6rem + 1.25vw, 1.4rem);
 }
 
 .contact-details a {
+  color: #772e2e;
+}
+
+/* .contact-details a {
   display: block;
   color: #ff0000;
-}
+} */
 
 .contact-details a:hover {
   text-decoration: underline;
@@ -828,7 +832,7 @@ iframe {
 #fieldset {
   margin: 0 auto;
   padding: 1em;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -879,7 +883,7 @@ textarea {
   width: 100%;
   margin: 0.3em 0 0 0;
   padding: 0.5em 0.5em;
-  border: 2px solid rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -912,7 +916,7 @@ textarea.touched:valid {
 
 input,
 textarea {
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(0, 0, 0, 0.6);
   border-radius: 4px;
 }
 
@@ -962,7 +966,7 @@ textarea.invalid + .input-error-message {
 
 #inspiration {
   margin: 2em auto;
-  margin-bottom: 8em;
+  margin-bottom: 2em;
   font-size: 1.2rem;
   font-weight: 400;
   font-style: italic;
@@ -982,6 +986,25 @@ textarea.invalid + .input-error-message {
   color: var(--s);
   padding: 0.5em 1em;
   z-index: 200;
+}
+
+.ordered-list {
+  font-family: "Vollkorn", sans-serif;
+  margin: 2em auto;
+  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 0.65rem + 1.25vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 90%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+  font-style: italic;
+}
+
+.ordered-list li::first-letter {
+  font-size: 1.4rem;
+  font-style: italic;
 }
 
 @media only screen and (max-width: 425px) {
@@ -1234,6 +1257,25 @@ textarea.invalid + .input-error-message {
 
   #inspiration {
     margin-top: 4em;
+  }
+
+  .ordered-list {
+    font-family: "Vollkorn", sans-serif;
+    margin: 2em auto;
+    font-size: 1.2rem !important;
+    font-size: clamp(0.9rem, 0.65rem + 1.25vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 90%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
+    font-style: italic;
+  }
+
+  .ordered-list li::first-letter {
+    font-size: 1.4rem !important;
+    font-style: italic;
   }
 }
 
