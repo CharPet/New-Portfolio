@@ -190,8 +190,8 @@ document.addEventListener("DOMContentLoaded", function () {
           {
             opacity: 1,
             x: 0,
-            duration: 0.4,
-            stagger: 0.4,
+            duration: 0.2,
+            stagger: 0.2,
             ease: "power2.out",
           },
           "-=0.3"
