@@ -43,7 +43,13 @@ const orbits = [
   },
   {
     line: "line7",
-    planets: ["vscode-planet", "github-planet", "ubuntu-planet", "vs-planet"],
+    planets: [
+      "vscode-planet",
+      "intellij-planet",
+      "github-planet",
+      "ubuntu-planet",
+      "vs-planet",
+    ],
     speed: 0.001,
     clockwise: true,
   },
