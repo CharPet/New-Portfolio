@@ -1007,6 +1007,10 @@ textarea.invalid + .input-error-message {
   font-style: italic;
 }
 
+#phone-number {
+  font-family: "Vollkorn-BoldItalic";
+}
+
 @media (max-width: 600px) {
   body,
   html {

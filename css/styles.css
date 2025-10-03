@@ -1249,3 +1249,7 @@ textarea.invalid + .input-error-message {
   font-size: 1.5rem;
   font-style: italic;
 }
+
+#phone-number {
+  font-family: "Vollkorn-BoldItalic";
+}
